@@ -8,11 +8,7 @@
 </head>
 <body>
  <h1>1조 프로젝트</h1>
- <!-- 회원가입 -->
-
- <!-- 로그인 -->
-
-<!-- 상품목록 -->
+ <p>테스트입니다</p>
  <p><a href="${pageContext.request.contextPath}/product/list.do">상품 목록</a></p>
 </body>
 </html>
