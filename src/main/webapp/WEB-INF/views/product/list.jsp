@@ -214,7 +214,7 @@
             </div>
             <div align="right" class="col-lg-3" style="border: 1px solid lightgray;">
 	            <div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
 				  <label class="custom-control-label" for="customRadio1">현금</label>
 				</div>
 				<div class="custom-control custom-radio">
