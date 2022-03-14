@@ -196,7 +196,7 @@
          <div class="row">
              
              <div class="col-lg-9" style="border: 1px solid lightgray;">
-                 <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h2>
+                 <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h3>
                  <div class="row" style="overflow: auto; height: 125px;">
                    <p>너구리</p>
                    <p>너구리</p>
@@ -214,7 +214,7 @@
             </div>
             <div align="right" class="col-lg-3" style="border: 1px solid lightgray;">
 	            <div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
 				  <label class="custom-control-label" for="customRadio1">현금</label>
 				</div>
 				<div class="custom-control custom-radio">
