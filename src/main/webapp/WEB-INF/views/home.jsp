@@ -33,33 +33,9 @@
         background-color: rgba(255,255,255,0.5);
         
         }
-
-        .form-signin .checkbox {
-        font-weight: 400;
-        }
-
-        .form-signin .form-floating:focus-within {
-        z-index: 2;
-        }
-
-        .form-signin input[type="email"] {
-        margin-bottom: -1px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        }
-
-        .form-signin input[type="password"] {
-        margin-bottom: 10px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        }
-        
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
+		button{
+			float:left;
+		}
     </style>
   
       
@@ -74,16 +50,17 @@
             <h1 class="h3 mb-3 fw-normal text-dark">KIOSK</h1>
         
             <div class="form-floating">
-                <input type="id" class="form-control" id="floatingInput" placeholder="ID">
+                <input type="ID" class="form-control" id="floatingInput" placeholder="ID">
                 <label for="floatingInput">ID</label>
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-100 btn btn-lg btn-warning" type="submit">로그인</button>
-            <button class="w-100 btn btn-lg btn-info" type="submit">회원가입</button>
-            
+
+         	<button class="w-50 btn btn-lg btn-warning" type="submit" onclick="${pageContext.request.contextPath}/signup.do">회원가입</button>
+            <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
+
             </form>
         </div>
         <p><a href="${pageContext.request.contextPath}/product/list.do">상품 목록</a></p>
