@@ -10,9 +10,9 @@
     <style>
     	
     	body{
-    	background-image:url(background/back1.png);
-    	background-repeat:no-repeat;
-    	background-size : cover ;
+    	background-image:url(background/back4.jpg);
+    	background-repeat:repeat;
+    	background-size :auto ;
     	}
         body {
         height: 100%;
