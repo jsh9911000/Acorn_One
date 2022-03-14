@@ -10,9 +10,15 @@
     <style>
     	
     	body{
-    	background-image:url(background/back4.jpg);
+		 HEAD
+    	background-image:url(background/back1.jpg);
     	background-repeat:repeat;
     	background-size :auto ;
+
+    	background-image:url(background/back1.jpg);
+    	background-repeat:repeat;
+	    background-size : auto;
+		branch 'master' of https://github.com/jsh9911000/Acorn_One.git
     	}
         body {
         height: 100%;
