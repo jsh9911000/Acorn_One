@@ -51,7 +51,7 @@
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-50 btn btn-lg btn-warning" type="submit">회원가입</button>
+            <button class="w-50 btn btn-lg btn-warning" type="submit" onclick="${pageContext.request.contextPath}/signup.do">회원가입</button>
             <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
             </form>
         </div>
