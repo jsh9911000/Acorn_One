@@ -16,7 +16,8 @@
             <div class="modal-header p-5 pb-4 border-bottom-0">
               <!-- <h5 class="modal-title">Modal title</h5> -->
               <h2 class="fw-bold mb-0">Sign up for free</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
+              onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
             </div>
       
             <div class="modal-body p-5 pt-0">
@@ -24,10 +25,15 @@
                 <div class="form-floating mb-3">
                   <input type="ID" class="form-control rounded-4" id="floatingInput" placeholder="ID">
                   <label for="floatingInput">ID</label>
+                  <small class="text-muted">중복 확인 관련 뭔가 넣어야됨.</small>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password2" class="form-control rounded-4" id="floatingPassword2" placeholder="Password">
+                  <label for="floatingPassword2">Password</label>
                 </div>
                 <div class="form-floating mb-3">
                  <input type="name" class="form-control rounded-4" id="floatingName" placeholder="Name">
@@ -36,24 +42,21 @@
                 <div class="form-floating mb-3">
                  <input type="age" class="form-control rounded-4" id="floatingAge" placeholder="Age">
                  <label for="floatingAge">나이</label>
+                 <small class="text-muted">숫자로만 작성할 수 있게 만들자!</small>
                 </div>
-
-                <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Sign up</button>
+				<div class="custom-control custom-radio">
+				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+				  <label class="custom-control-label" for="customRadio1">남자</label>
+				</div>
+				<div class="custom-control custom-radio">
+				  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+				  <label class="custom-control-label" for="customRadio2">여자</label>
+				</div>
+                <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">회원가입</button>
                 <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                 <hr class="my-4">
-                <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-                <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#twitter"/></svg>
-                  Sign up with Twitter
-                </button>
-                <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-4" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"/></svg>
-                  Sign up with Facebook
-                </button>
-                <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-4" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#github"/></svg>
-                  Sign up with GitHub
-                </button>
+                <h2 class="fs-5 fw-bold mb-3">가입이 완료되면 로그인 페이지로 이동합니다.</h2>
+                
               </form>
             </div>
           </div>
