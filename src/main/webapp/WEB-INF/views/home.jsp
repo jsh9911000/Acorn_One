@@ -8,6 +8,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style>
+    	
+    	body{
+    	background-image:url(background/back1.png);
+    	background-repeat:no-repeat;
+    	background-size : cover ;
+    	}
         body {
         height: 100%;
         }
@@ -51,8 +57,10 @@
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-50 btn btn-lg btn-warning" type="submit" onclick="${pageContext.request.contextPath}/signup.do">회원가입</button>
+
+         	<button class="w-50 btn btn-lg btn-warning" type="submit" onclick="${pageContext.request.contextPath}/signup.do">회원가입</button>
             <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
+
             </form>
         </div>
         <p><a href="${pageContext.request.contextPath}/product/list.do">상품 목록</a></p>
