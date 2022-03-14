@@ -45,7 +45,7 @@
                  <small class="text-muted">숫자로만 작성할 수 있게 만들자!</small>
                 </div>
 				<div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
 				  <label class="custom-control-label" for="customRadio1">남자</label>
 				</div>
 				<div class="custom-control custom-radio">
