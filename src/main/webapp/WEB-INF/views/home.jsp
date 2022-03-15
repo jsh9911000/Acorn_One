@@ -11,9 +11,15 @@
     <style>
     	
     	body{
+		 HEAD
     	background-image:url(background/back1.jpg);
     	background-repeat:repeat;
-    	background-size : auto;
+    	background-size :auto ;
+
+    	background-image:url(background/back1.jpg);
+    	background-repeat:repeat;
+	    background-size : auto;
+		branch 'master' of https://github.com/jsh9911000/Acorn_One.git
     	}
         body {
         height: 100%;
@@ -42,6 +48,7 @@
       
     </head>
     <body class="text-center">
+    <h1>테스트입니다</h1>
         <div class="container ">
             <form>
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
