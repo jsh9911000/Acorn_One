@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!-- ssss -->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -76,7 +77,7 @@
                 <label for="floatingPassword">Password</label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
-            
+        
             </form>
         </div>
         <p><a href="${pageContext.request.contextPath}/product/list.do">상품 목록</a></p>
