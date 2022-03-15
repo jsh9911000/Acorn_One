@@ -4,17 +4,22 @@ public class MemberDto {
 	private String id;
 	private String pwd;
 	private String email;
+	private String newPwd;
+	private String regdate;
 	private String name;
 	private int age;
 	private String gender;
 	
 	public MemberDto() {}
 
-	public MemberDto(String id, String pwd, String email, String name, int age, String gender) {
+	public MemberDto(String id, String pwd, String email, String newPwd, String regdate, String name, int age,
+			String gender) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;
+		this.newPwd = newPwd;
+		this.regdate = regdate;
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
@@ -42,6 +47,22 @@ public class MemberDto {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getNewPwd() {
+		return newPwd;
+	}
+
+	public void setNewPwd(String newPwd) {
+		this.newPwd = newPwd;
+	}
+
+	public String getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 
 	public String getName() {
