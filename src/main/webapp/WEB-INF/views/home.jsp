@@ -48,7 +48,7 @@
       
     </head>
     <body class="text-center">
-    <h1>테스트입니다</h1>
+  
         <div class="container ">
             <form>
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="80" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
