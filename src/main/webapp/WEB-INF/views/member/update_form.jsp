@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<!-- update_form 어떻게 만들어 볼까요? -->
+	<!-- update_form 어떻게 만들까용? -->
 	
 </body>
 </html>
