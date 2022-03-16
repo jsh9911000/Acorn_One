@@ -19,9 +19,9 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
               onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
             </div>
-      
+      	
             <div class="modal-body p-5 pt-0">
-              <form class="">
+              <form class="" action="${pageContext.request.contextPath}/member/sign.do" method="post">
                 <div class="form-floating mb-3">
                   <input type="ID" class="form-control rounded-4" id="floatingInput" placeholder="ID">
                   <label for="floatingInput">ID</label>
