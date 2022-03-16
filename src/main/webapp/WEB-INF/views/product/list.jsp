@@ -71,9 +71,14 @@
                  <div class="card">
 				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">짜파게티</h5>
-				    <p class="card-text">3,000원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="짜파게티" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
+						<p class="card-text">3,000원</p>
+						<input type="submit" value="구매">
+					</form> 
+
+				  
 				  </div>
 				</div>
              </div>
@@ -153,6 +158,27 @@
                  <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h3>
                  <div class="row" style="overflow: auto; height: 125px;">
                 
+					<table>
+						<thead>
+							<tr>
+							
+								<th>음식</th>
+								<th>가격</th>
+							
+				
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach var="tmp" items="${list }">
+							<tr>
+								
+								<td>${tmp.p_name }</td>
+								<td>${tmp.p_price }</td>
+								
+							</tr>
+						</c:forEach>
+						</tbody>
+					</table>
                  </div>
             </div>
             <div align="right" class="col-lg-4">
