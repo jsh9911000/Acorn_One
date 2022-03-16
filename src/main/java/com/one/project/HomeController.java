@@ -26,5 +26,6 @@ public class HomeController {
 	public String signup() {
 		
 		return "signup";
+		//지워주세여
 	}
 }
