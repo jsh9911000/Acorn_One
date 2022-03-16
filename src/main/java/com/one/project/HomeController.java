@@ -21,11 +21,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping("/product/list")
-	public String list() {
-		
-		return "product/list";
-	}
+	
 	@RequestMapping("/signup.do")
 	public String signup() {
 		

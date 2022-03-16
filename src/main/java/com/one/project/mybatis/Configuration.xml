@@ -10,5 +10,6 @@
 	<!-- 필요한 Mapper xml 등록하기  -->
 	<mappers>
 		<mapper resource="com/one/project/mybatis/MemberMapper.xml"/>
+		<mapper resource="com/one/project/mybatis/BasketsMapper.xml"/>
 	</mappers>
 </configuration>
