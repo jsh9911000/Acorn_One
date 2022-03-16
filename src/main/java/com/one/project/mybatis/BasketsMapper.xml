@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="baskets">
+
+
+	<select id="getList" resultType="com.one.project.baskets.dto.BasketsDto">
+		SELECT p_name, p_price
+		FROM baskets
+		
+	</select>
+	
+	<insert id="insert" parameterType="com.one.project.baskets.dto.BasketsDto">
+		INSERT INTO baskets
+		(p_name,p_price)
+		VALUES(#{p_name}, #{p_price})
+	</insert>
+
+	
+</mapper>

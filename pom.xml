@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.one</groupId>
-	<artifactId>project</artifactId>
-	<name>Acorn_One</name>
+	<groupId>com.test1</groupId>
+	<artifactId>order</artifactId>
+	<name>Order_test</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -115,7 +115,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency> 
+		</dependency>    
 		<!-- 추가 의존 라이브러리 -->
 		<!-- MyBatis 라이브러리 -->
 	  	<dependency>
@@ -179,7 +179,8 @@
 		    <groupId>com.oracle.database.jdbc</groupId>
 		    <artifactId>ojdbc8</artifactId>
 		    <version>21.1.0.0</version>
-		</dependency>       
+		</dependency>
+    
 	</dependencies>
     <build>
         <plugins>
