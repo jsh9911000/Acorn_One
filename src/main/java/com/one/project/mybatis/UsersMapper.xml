@@ -7,32 +7,32 @@
 		WHERE id=#{id}
 	</select>
 	
-	<insert id="insert" parameterType="memberDto">
-		INSERT INTO member
+	<insert id="insert" parameterType="usersDto">
+		INSERT INTO users
 		(id, pwd, name, gender, regdate)
 		VALUES(#{id }, #{pwd }, #{name }, #{gender }, SYSDATE)
 	</insert>
 	
-	<select id="getDate" parameterType="string" resultType="memberDto">
+	<select id="getDate" parameterType="string" resultType="usersDto">
 		select id, pwd, name, gender, regdate
-		from member
+		from users
 		where id=#{id }
 	</select>
 	
-	<update id="pwdUpdate" parameterType="memberDto">
-		update member
+	<update id="pwdUpdate" parameterType="usersDto">
+		update users
 		set pwd=#{newPwd }
 		where id=#{id }
 	</update>
 	
-	<update id="update" parameterType="memberDto">
-		update member
+	<update id="update" parameterType="usersDto">
+		update users
 		set gender=#{gender }
 		where id=#{id }
 	</update>
 	
 	<delete id="delete" parameterType="string">
-		delete from member
+		delete from users
 		where id=#{id}
 	</delete>
 </mapper>
