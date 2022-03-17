@@ -9,12 +9,12 @@
 	
 	<insert id="insert" parameterType="memberDto">
 		INSERT INTO member
-		(id, pwd, name, age, gender, regdate)
-		VALUES(#{id }, #{pwd }, #{name }, #{age }, #{gender }, SYSDATE)
+		(id, pwd, name, gender, regdate)
+		VALUES(#{id }, #{pwd }, #{name }, #{gender }, SYSDATE)
 	</insert>
 	
 	<select id="getDate" parameterType="string" resultType="memberDto">
-		select id, pwd, name, age, gender, regdate
+		select id, pwd, name, gender, regdate
 		from member
 		where id=#{id }
 	</select>
@@ -27,7 +27,7 @@
 	
 	<update id="update" parameterType="memberDto">
 		update member
-		set gender=#{gender }, age=#{age }
+		set gender=#{gender }
 		where id=#{id }
 	</update>
 	
