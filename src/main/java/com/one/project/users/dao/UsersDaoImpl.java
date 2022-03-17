@@ -1,13 +1,13 @@
-package com.one.project.member.dao;
+package com.one.project.users.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.one.project.member.dto.MemberDto;
+import com.one.project.users.dto.UsersDto;
 
 @Repository
-public class MemberDaoImpl implements MemberDao{
+public class UsersDaoImpl implements UsersDao{
 
 	@Autowired
 	private SqlSession session;
@@ -23,25 +23,25 @@ public class MemberDaoImpl implements MemberDao{
 	}
 
 	@Override
-	public void insert(MemberDto dto) {
+	public void insert(UsersDto dto) {
 		
 		session.insert("member.insert", dto);
 	}
 
 	@Override
-	public MemberDto getData(String id) {
+	public UsersDto getData(String id) {
 		
 		return session.selectOne("member.getDate", id);
 	}
 
 	@Override
-	public void update(MemberDto dto) {
+	public void update(UsersDto dto) {
 		
 		session.update("member.update", dto);
 	}
 
 	@Override
-	public void updatePwd(MemberDto dto) {
+	public void updatePwd(UsersDto dto) {
 		
 		session.update("member.pwdUpdate", dto);
 	}

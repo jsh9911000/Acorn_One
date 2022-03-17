@@ -1,4 +1,4 @@
-package com.one.project.member.service;
+package com.one.project.users.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,14 +11,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.one.project.member.dao.MemberDao;
-import com.one.project.member.dto.MemberDto;
+import com.one.project.users.dao.UsersDao;
+import com.one.project.users.dto.UsersDto;
 
 @Service
-public class MemberServiceImpl implements MemberService{
+public class UsersServiceImpl implements UsersService{
 
 	@Autowired
-	private MemberDao dao;
+	private UsersDao dao;
 	
 	@Override
 	public Map<String, Object> isExistId(String inputId) {
@@ -28,7 +28,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void addUser(MemberDto dto) {
+	public void addUser(UsersDto dto) {
 		String pwd=dto.getPwd();
 		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
 		String encodePwd=encoder.encode(pwd);
@@ -37,9 +37,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void loginProcess(MemberDto dto, HttpSession session) {
+	public void loginProcess(UsersDto dto, HttpSession session) {
 		boolean isValid=false;
-		MemberDto result=dao.getData(dto.getId());
+		UsersDto result=dao.getData(dto.getId());
 		if(result != null) {
 			String encodePwd=result.getPwd();
 			String inputPwd=dto.getPwd();
@@ -53,14 +53,14 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void getInfo(HttpSession session, ModelAndView mView) {
 		String id=(String)session.getAttribute("id");
-		MemberDto dto=dao.getData(id);
+		UsersDto dto=dao.getData(id);
 		mView.addObject("dto", dto);
 	}
 
 	@Override
-	public void updateUserPwd(HttpSession session, MemberDto dto, ModelAndView mView) {
+	public void updateUserPwd(HttpSession session, UsersDto dto, ModelAndView mView) {
 		String id=(String)session.getAttribute("id");
-		MemberDto resultDto=dao.getData(id);
+		UsersDto resultDto=dao.getData(id);
 		String encodedPwd=resultDto.getPwd();
 		String inputPwd=dto.getPwd();
 		boolean isValid=BCrypt.checkpw(inputPwd, encodedPwd);
@@ -77,7 +77,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void updateUser(MemberDto dto, HttpSession session) {
+	public void updateUser(UsersDto dto, HttpSession session) {
 		String id=(String)session.getAttribute("id");
 		dto.setId(id);
 		dao.update(dto);
