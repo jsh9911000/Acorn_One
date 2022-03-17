@@ -79,5 +79,6 @@
 
             </form>
         </div>
+        <a href="${pageContext.request.contextPath}/product/list.do"">주문목록</a>
     </body>
 </html>
