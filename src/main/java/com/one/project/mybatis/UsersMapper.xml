@@ -10,7 +10,7 @@
 	</select>
 	
 	<insert id="insert" parameterType="usersDto">
-		INSERT INTO users
+		INSERT INTO users2
 		(id, pwd, name, gender, regdate)
 		VALUES(#{id }, #{pwd }, #{name }, #{gender }, SYSDATE)
 	</insert>
