@@ -1,6 +1,7 @@
 package com.one.project.baskets.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,13 @@ public class BasketsController {
 		
 		//service.saveBasket(request);
 		service.saveBasket(p_name,p_price);
+		return "redirect:/product/list.do";
+	}
+	@RequestMapping("/product/delete")
+	public String delete(HttpServletRequest request) {
+		
+		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		service.deleteBasket(b_num);
 		return "redirect:/product/list.do";
 	}
 	
