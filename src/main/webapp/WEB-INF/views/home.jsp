@@ -58,12 +58,12 @@
             <h1 class="h3 mb-3 fw-normal text-dark">KIOSK</h1>
         
             <div class="form-floating">
-                <input type="ID" class="form-control" id="floatingInput" placeholder="ID">
-                <label for="floatingInput">ID</label>
+                <input type="text" class="form-control" id="id" name="id" placeholder="ID">
+                <label for="id">ID</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+                <label for="pwd">Password</label>
             </div>
 
             <button class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/signup.do'">회원가입</button>
