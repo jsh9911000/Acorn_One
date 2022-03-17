@@ -1,19 +1,17 @@
-package com.one.project.member.dto;
+package com.one.project.users.dto;
 
-public class MemberDto {
+public class UsersDto {
 	private String id;
 	private String pwd;
 	private String email;
 	private String newPwd;
 	private String regdate;
 	private String name;
-	private int age;
 	private String gender;
 	
-	public MemberDto() {}
+	public UsersDto() {}
 
-	public MemberDto(String id, String pwd, String email, String newPwd, String regdate, String name, int age,
-			String gender) {
+	public UsersDto(String id, String pwd, String email, String newPwd, String regdate, String name, String gender) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
@@ -21,7 +19,6 @@ public class MemberDto {
 		this.newPwd = newPwd;
 		this.regdate = regdate;
 		this.name = name;
-		this.age = age;
 		this.gender = gender;
 	}
 
@@ -73,14 +70,6 @@ public class MemberDto {
 		this.name = name;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public String getGender() {
 		return gender;
 	}
@@ -88,6 +77,6 @@ public class MemberDto {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+
 	
 }
