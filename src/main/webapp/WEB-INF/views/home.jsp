@@ -66,11 +66,11 @@
 			</c:otherwise>
 		</c:choose>
             <div class="form-floating">
-                <input type="ID" class="form-control" id="id" placeholder="ID">
+                <input type="text" class="form-control" id="id" name="id" placeholder="ID">
                 <label for="id">ID</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="pwd" placeholder="Password">
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
                 <label for="pwd">Password</label>
             </div>
 
