@@ -66,7 +66,7 @@
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <button class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/signup.do'">회원가입</button>
+            <button class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/member/signup_form.do'">회원가입</button>
             <button class="w-50 btn btn-lg btn-primary" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">로그인</button>
 
             </form>
