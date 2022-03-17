@@ -35,4 +35,10 @@ public class BasketsDaoImpl implements BasketsDao {
 		
 	}
 
+	@Override
+	public void pay() {
+		session.delete("baskets.pay");
+		
+	}
+
 }

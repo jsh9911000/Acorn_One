@@ -40,4 +40,11 @@ public class BasketsServieImpl implements BasketsService{
 		dao.delete(dto);
 	}
 
+
+	@Override
+	public void payBasket() {
+		dao.pay();
+		
+	}
+
 }

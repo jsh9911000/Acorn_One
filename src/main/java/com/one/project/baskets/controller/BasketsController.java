@@ -37,9 +37,16 @@ public class BasketsController {
 	}
 	@RequestMapping("/product/delete")
 	public String delete(HttpServletRequest request) {
-		
+
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		service.deleteBasket(b_num);
+
+		return "redirect:/product/list.do";
+	}
+	@RequestMapping("/product/pay")
+	public String pay(HttpServletRequest request) {
+		
+		service.payBasket();
 		return "redirect:/product/list.do";
 	}
 	
