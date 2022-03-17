@@ -1,16 +1,16 @@
-package com.one.project.member.controller;
+package com.one.project.users.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.one.project.member.service.MemberService;
+import com.one.project.users.service.UsersService;
 
 @Controller
-public class MemberController {
+public class UsersController {
 	
 	@Autowired
-	private MemberService service;
+	private UsersService service;
 	
 	//회원 가입 요청 처리
 	
