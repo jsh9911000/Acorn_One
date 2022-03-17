@@ -199,9 +199,17 @@
 				  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
 				  <label class="custom-control-label" for="customRadio2">카드</label>
 				</div>
-	          	<button type="button" class="btn btn-primary btn-xl">결제</button>       
+	          	<button type="button" class="btn btn-primary btn-xl" onclick="javascript:payConfirm()">결제</button>       
            </div>
          </div>
-        </div> 
+        </div>
+        <script>
+			function payConfirm(){
+				const isDelete=confirm("결제 하시겠습니까?");
+				if(isDelete){
+					location.href="${pageContext.request.contextPath}/product/pay.do";
+				}
+			}
+</script> 
      </body>
      </html>

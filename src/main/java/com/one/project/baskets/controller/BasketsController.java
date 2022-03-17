@@ -35,11 +35,10 @@ public class BasketsController {
 		service.saveBasket(p_name,p_price);
 		return "redirect:/product/list.do";
 	}
-	@RequestMapping("/product/delete")
+	@RequestMapping("/product/pay")
 	public String delete(HttpServletRequest request) {
 		
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
-		service.deleteBasket(b_num);
+		service.payBasket();
 		return "redirect:/product/list.do";
 	}
 	

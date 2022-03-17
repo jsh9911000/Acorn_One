@@ -20,4 +20,8 @@
 		WHERE b_num=#{b_num}
 	</delete>
 	
+	<delete id="pay" parameterType="com.one.project.baskets.dto.BasketsDto">
+		DELETE FROM baskets
+		
+	</delete>	
 </mapper>
