@@ -14,7 +14,7 @@ public class UsersDaoImpl implements UsersDao{
 	
 	@Override
 	public boolean isExist(String inputId) {
-		String id=session.selectOne("member.isExist", inputId);
+		String id=session.selectOne("users.isExist", inputId);
 		if(id==null) {
 			return false;
 		}else {
@@ -22,34 +22,32 @@ public class UsersDaoImpl implements UsersDao{
 		}
 	}
 
+
 	@Override
 	public void insert(UsersDto dto) {
-		
-		session.insert("member.insert", dto);
+		session.insert("users.insert", dto);
 	}
 
 	@Override
 	public UsersDto getData(String id) {
 		
-		return session.selectOne("member.getDate", id);
-	}
-
-	@Override
-	public void update(UsersDto dto) {
-		
-		session.update("member.update", dto);
+		// 존재하지 않은 아이디면 null 이 리턴된다. 
+		return session.selectOne("users.getData", id);
 	}
 
 	@Override
 	public void updatePwd(UsersDto dto) {
-		
-		session.update("member.pwdUpdate", dto);
+		session.update("users.pwdUpdate", dto);
+	}
+
+	@Override
+	public void update(UsersDto dto) {
+		session.update("users.update", dto);
 	}
 
 	@Override
 	public void delete(String id) {
-		
-		session.delete("member.delete", id);
+		session.delete("users.delete", id);
 	}
 	
 }
