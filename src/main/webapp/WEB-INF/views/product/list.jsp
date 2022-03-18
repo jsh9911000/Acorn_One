@@ -46,10 +46,10 @@
                 </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <li><a class="dropdown-item" href="#">회원가입</a></li>
-                 <li><a class="dropdown-item" href="#">로그인</a></li>
+                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>
                </ul>
              </li>
-              <li class="nav-item">
+              <li class="nav-item"> 
                <a class="nav-link active" aria-current="page" href="#">전체메뉴</a>
              </li>
             <li class="nav-item">
