@@ -14,4 +14,5 @@ public interface BasketsService {
 	public void saveBasket(String p_name, int p_price, String u_name);
 	public void deleteBasket(int b_num);
 	public void payBasket();
+	public void moveBasket();
 }

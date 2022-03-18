@@ -41,4 +41,10 @@ public class BasketsDaoImpl implements BasketsDao {
 		
 	}
 
+	@Override
+	public void move() {
+		session.insert("baskets.move");
+		
+	}
+
 }
