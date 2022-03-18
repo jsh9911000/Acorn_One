@@ -91,5 +91,22 @@ public class UsersController {
 		mView.setViewName("users/login");
 		return mView;
 	}
+	//비밀번호(newPwd)폼 요청 처리
+	   @RequestMapping("/users/pwd_updateform")
+	   public ModelAndView pwdUpdateForm(ModelAndView mView, HttpServletRequest request) {
+	      
+	      mView.setViewName("users/pwd_updateform");
+	      return mView;
+	}
+	   //비밀번호(newPwd) 요청 처리
+	   @RequestMapping("/users/pwd_update")
+	   public ModelAndView pwdUpdate(UsersDto dto, 
+	         ModelAndView mView, HttpSession session, HttpServletRequest request) {
+	   
+	      service.updateUserPwd(session, dto, mView);
+	      
+	      mView.setViewName("users/pwd_update");
+	      return mView;
+	}
 
 }
