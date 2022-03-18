@@ -46,7 +46,7 @@
                 </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <li><a class="dropdown-item" href="#">회원가입</a></li>
-                 <li><a class="dropdown-item"href="/users/logout.jsp" href="#">로그아웃</a></li>
+                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>
                </ul>
              </li>
               <li class="nav-item"> 
