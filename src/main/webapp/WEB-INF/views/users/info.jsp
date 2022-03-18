@@ -16,13 +16,9 @@
       </tr>
       <tr>
          <th>비밀번호</th>
-         <td><a href="${pageContext.request.contextPath}/users/private/pwd_updateform.do">수정하기</a></td>
+         <td><a href="${pageContext.request.contextPath}/users/pwd_updateform.do">수정하기</a></td>
       </tr>
-      <tr>
-         <th>이메일</th>
-         <td>${dto.email }</td>
-      </tr>
-      <tr>
+       <tr>
          <th>가입일</th>
          <td>${dto.regdate }</td>
       </tr>
@@ -35,16 +31,15 @@
          <td>${dto.gender }</td>
       </tr>
    </table>
-   <a href="${pageContext.request.contextPath}/users/private/update.do">개인정보 수정</a>
    <a href="javascript:deleteConfirm()">탈퇴</a>
 </div>
 <script>
-	function deleteConfirm(){
-		const isDelete=confirm("${id} 님 탈퇴 하시겠습니까?");
-		if(isDelete){
-			location.href="${pageContext.request.contextPath}/users/private/delete.do";
-		}
-	}
+   function deleteConfirm(){
+      const isDelete=confirm("${id} 님 탈퇴 하시겠습니까?");
+      if(isDelete){
+         location.href="${pageContext.request.contextPath}/users/private/delete.do";
+      }
+   }
 </script>   
 </body>
 </html>
