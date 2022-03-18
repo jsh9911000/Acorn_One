@@ -1,6 +1,7 @@
 package com.one.project.baskets.service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,4 +12,6 @@ public interface BasketsService {
 	public void getListMember(ModelAndView mView);
 	//public void saveBasket(HttpServletRequest request);
 	public void saveBasket(String p_name, int p_price);
+	public void deleteBasket(int b_num);
+	public void payBasket();
 }

@@ -29,4 +29,16 @@ public class BasketsDaoImpl implements BasketsDao {
 		session.insert("baskets.insert", dto);
 	}
 
+	@Override
+	public void delete(BasketsDto dto) {
+		session.delete("baskets.delete", dto);
+		
+	}
+
+	@Override
+	public void pay() {
+		session.delete("baskets.pay");
+		
+	}
+
 }

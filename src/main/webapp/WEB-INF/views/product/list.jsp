@@ -72,10 +72,10 @@
 				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
 				  	<form action="insert.do">
-						<input type="text" name="p_name" value="짜파게티" readonly="readonly"><br>
+						<input type="text" name="p_name" value="짜파게티1" readonly="readonly"><br>
 						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
 						<p class="card-text">3,000원</p>
-						<input type="submit" value="구매">
+						<input type="submit" class="btn btn-primary" value="구매">
 					</form> 
 
 				  
@@ -164,6 +164,7 @@
 							
 								<th>음식</th>
 								<th>가격</th>
+								<th>삭제</th>
 							
 				
 							</tr>
@@ -174,6 +175,14 @@
 								
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
+								<td>
+									<form action="delete.do">
+										
+										<input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly"><br>
+										
+										<input type="submit" value="삭제">
+									</form> 
+								</td>
 								
 							</tr>
 						</c:forEach>
@@ -190,9 +199,17 @@
 				  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
 				  <label class="custom-control-label" for="customRadio2">카드</label>
 				</div>
-	          	<button type="button" class="btn btn-primary btn-xl">결제</button>       
+	          	<button type="button" class="btn btn-primary btn-xl" onclick="javascript:payConfirm()">결제</button>       
            </div>
          </div>
-        </div>     
+        </div>
+        <script>
+			function payConfirm(){
+				const isDelete=confirm("결제 하시겠습니까?");
+				if(isDelete){
+					location.href="${pageContext.request.contextPath}/product/pay.do";
+				}
+			}
+</script> 
      </body>
      </html>

@@ -2,6 +2,8 @@ package com.one.project.baskets.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +30,21 @@ public class BasketsServieImpl implements BasketsService{
 		dto.setP_name(p_name);
 		dto.setP_price(p_price);
 		dao.insert(dto);
+	}
+
+
+	@Override
+	public void deleteBasket(int b_num) {
+		BasketsDto dto = new BasketsDto();
+		dto.setB_num(b_num);
+		dao.delete(dto);
+	}
+
+
+	@Override
+	public void payBasket() {
+		dao.pay();
+		
 	}
 
 }

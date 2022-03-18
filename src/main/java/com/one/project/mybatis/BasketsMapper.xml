@@ -4,16 +4,24 @@
 
 
 	<select id="getList" resultType="com.one.project.baskets.dto.BasketsDto">
-		SELECT p_name, p_price
+		SELECT p_name, p_price, b_num
 		FROM baskets
 		
 	</select>
 	
 	<insert id="insert" parameterType="com.one.project.baskets.dto.BasketsDto">
 		INSERT INTO baskets
-		(p_name,p_price)
-		VALUES(#{p_name}, #{p_price})
+		(p_name,p_price,b_num)
+		VALUES(#{p_name}, #{p_price},b_seq.NEXTVAL)
 	</insert>
-
 	
+	<delete id="delete" parameterType="com.one.project.baskets.dto.BasketsDto">
+		DELETE FROM baskets
+		WHERE b_num=#{b_num}
+	</delete>
+	
+	<delete id="pay" parameterType="com.one.project.baskets.dto.BasketsDto">
+		DELETE FROM baskets
+		
+	</delete>	
 </mapper>
