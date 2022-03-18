@@ -15,7 +15,7 @@
 		VALUES(#{id }, #{pwd }, #{name }, #{gender}, SYSDATE)
 	</insert>
 	
-	<select id="getDate" parameterType="string" resultType="usersDto">
+	<select id="getData" parameterType="string" resultType="usersDto">
 		select id, pwd, name, gender, regdate
 		from users
 		where id=#{id }
