@@ -49,7 +49,6 @@
       
     </head>
     <body class="text-center">
-        
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
@@ -98,9 +97,12 @@
 								<input type="hidden" name="url" value="${param.url }"/>
 							</c:otherwise>
 						</c:choose>
+						<a href="">
+							<button class="btn btn-lg btn-warning">로그아웃 하기</button>
+						</a>
 			            
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
-		            
+
 				</div>
 				</c:otherwise>
 			</c:choose>

@@ -22,6 +22,14 @@ public class UsersController {
 	@Autowired
 	private UsersService service;
 	
+	//로그아웃 요청 처리
+	@RequestMapping("/users/logout")
+	public String logout(HttpSession session) {
+		//세션에서 id 라는 키값으로 저장된 값 삭제 
+		session.removeAttribute("id");
+		return "users/logout";
+	}
+	
 	//회원 가입 요청 처리
 	@RequestMapping(value = "/signup_form", method = RequestMethod.GET)
 	public String signupForm() {
