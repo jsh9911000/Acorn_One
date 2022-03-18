@@ -122,8 +122,8 @@
 		const pwd2=document.querySelector("#pwd2").value;		
 	
 		//영어 대문자와 소문자, 숫자, 특수기호(!@#$)를 하나씩 조합하여 10~15글자 정규식
-		const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
-
+		//const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
+		const reg_pwd=/^[a-z].{4,9}$/;
 		
 		if(!reg_pwd.test(pwd)){
 			isPwdValid=false;
