@@ -193,11 +193,15 @@
 							</tr>
 						</thead>
 						<tbody>
+						<c:set var="total" value="0"/>
 						<c:forEach var="tmp" items="${list }">
+							
 							<tr>
 								
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
+							
+								
 								<td>
 									<form action="delete.do">
 										
@@ -208,7 +212,12 @@
 								</td>
 								
 							</tr>
+							<c:set var="total" value="${total +tmp.p_price}"/>
 						</c:forEach>
+						<c:out value="${total }"/>
+						<tr>
+							<td>총 금액 : ${total }원</td>
+						</tr>
 						</tbody>
 					</table>
                  </div>
@@ -234,6 +243,6 @@
 					//location.href="${pageContext.request.contextPath}/product/pay.do";
 				}
 			}
-</script> 
+		</script> 
      </body>
      </html>
