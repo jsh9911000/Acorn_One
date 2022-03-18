@@ -8,7 +8,7 @@
 </head>
 <body>
    <script>
-      alert("가입 되셨습니다")
+      alert("${param.id }회원님 가입 되었습니다.")
       location.href="${pageContext.request.contextPath}/home.do"
    </script>
 </body>
