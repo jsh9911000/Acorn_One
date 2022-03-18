@@ -77,4 +77,5 @@ public class UsersController {
 		mView.setViewName("users/login");
 		return mView;
 	}
+
 }
