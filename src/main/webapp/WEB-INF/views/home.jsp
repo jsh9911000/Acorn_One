@@ -38,9 +38,7 @@
         background-color: rgba(255,255,255,0.5);
         
         }
-		button{
-			float:left;
-		}
+		
     </style>
   
       
@@ -73,8 +71,8 @@
 			                <label for="pwd">Password</label>
 			            </div>
 			
-			            <button class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/signup.do'">회원가입</button>
-			            <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
+			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/signup.do'">회원가입</button>
+			            <button style="float:left" class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
 		
 		            </form>
 				</div>
@@ -96,7 +94,8 @@
 							</c:otherwise>
 						</c:choose>
 						<div class="form-floating">
-			            <h2><strong>${sessionScope.id }</strong>님 로그인중...</h2>
+			            <h2><strong>${sessionScope.id }</strong>님 </h2>
+			            <h3>즐거운 하루 되세요!</h3>
 			            </div>
 						<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>

@@ -84,7 +84,7 @@
 				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
 				  	<form action="insert.do">
-						<input type="text" name="p_name" value="짜파게티1" readonly="readonly"><br>
+						<input type="text" name="p_name" value="짜파게티" readonly="readonly"><br>
 						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
 						<p class="card-text">3,000원</p>
 						<input type="submit" class="btn btn-primary" value="구매">
@@ -98,9 +98,12 @@
                  <div class="card">
 				  <img src="../food/dduk.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">떡볶이</h5>
-				    <p class="card-text">3,000원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	 <form action="insert.do">
+						<input type="text" name="p_name" value="떡볶이" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
+						<p class="card-text">3,000원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -108,9 +111,12 @@
                  <div class="card">
 				  <img src="../food/spam.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">스팸마요덮밥</h5>
-				    <p class="card-text" >3,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="스팸마요덮밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="3500" readonly="readonly"><br>
+						<p class="card-text">3,000원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -118,9 +124,12 @@
                  <div class="card">
 				  <img src="../food/tuna.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">참치마요덮밥</h5>
-				    <p class="card-text">3,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="참치마요덮밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="3500" readonly="readonly"><br>
+						<p class="card-text">3,500원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -128,9 +137,12 @@
                  <div class="card">
 				  <img src="../food/chicken.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">치킨마요덮밥</h5>
-				    <p class="card-text">3,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				 	<form action="insert.do">
+						<input type="text" name="p_name" value="치킨마요덮밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="3500" readonly="readonly"><br>
+						<p class="card-text">3,500원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -138,9 +150,12 @@
                  <div class="card">
 				  <img src="../food/kimchi.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">김치볶음밥</h5>
-				    <p class="card-text">4,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="김치볶음밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="4500" readonly="readonly"><br>
+						<p class="card-text">4500원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -148,9 +163,12 @@
                  <div class="card">
 				  <img src="../food/no6.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">제육덮밥</h5>
-				    <p class="card-text">4,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="제육덮밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="4500" readonly="readonly"><br>
+						<p class="card-text">4500원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -158,9 +176,12 @@
                  <div class="card">
 				  <img src="../food/five3.PNG" class="card-img-top" alt="...">
 				  <div class="card-body">
-				    <h5 class="card-title">오삼불고기덮밥</h5>
-				    <p class="card-text">5,500원</p>
-				    <a href="#" class="btn btn-primary">선택</a>
+				  	<form action="insert.do">
+						<input type="text" name="p_name" value="오삼불고기덮밥" readonly="readonly"><br>
+						<input type="hidden" name="p_price" value="5500" readonly="readonly"><br>
+						<p class="card-text">5,500원</p>
+						<input type="submit" class="btn btn-primary" value="구매">
+					</form> 
 				  </div>
 				</div>
              </div>
@@ -173,7 +194,7 @@
 					<table>
 						<thead>
 							<tr>
-								<th>주문자</th>
+								
 								<th>음식</th>
 								<th>가격</th>
 								<th>삭제</th>
@@ -184,7 +205,7 @@
 						<tbody>
 						<c:forEach var="tmp" items="${list }">
 							<tr>
-								<td>${tmp.u_name }</td>
+								
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
 								<td>
@@ -219,7 +240,8 @@
 			function payConfirm(){
 				const isDelete=confirm("결제 하시겠습니까?");
 				if(isDelete){
-					location.href="${pageContext.request.contextPath}/product/pay.do";
+					location.href="${pageContext.request.contextPath}/product/move.do";
+					//location.href="${pageContext.request.contextPath}/product/pay.do";
 				}
 			}
 </script> 
