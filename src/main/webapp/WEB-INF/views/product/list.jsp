@@ -27,6 +27,8 @@
      </style>
      
      <body>
+    
+    
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <div class="container-fluid">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
@@ -161,7 +163,7 @@
 					<table>
 						<thead>
 							<tr>
-							
+								<th>주문자</th>
 								<th>음식</th>
 								<th>가격</th>
 								<th>삭제</th>
@@ -172,7 +174,7 @@
 						<tbody>
 						<c:forEach var="tmp" items="${list }">
 							<tr>
-								
+								<td>${tmp.u_name }</td>
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
 								<td>
