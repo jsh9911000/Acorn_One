@@ -50,6 +50,22 @@
     </head>
     <body class="text-center">
         
+<<<<<<< HEAD
+            <div class="form-floating">
+                <input type="ID" class="form-control" id="floatingInput" placeholder="ID">
+                <label for="floatingInput">ID</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <button class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/member/signup_form.do'">회원가입</button>
+            <button class="w-50 btn btn-lg btn-primary" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">로그인</button>
+
+            </form>
+        </div>
+=======
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
@@ -108,5 +124,6 @@
 			</c:choose>
         
         
+>>>>>>> branch 'master' of https://github.com/jsh9911000/Acorn_One.git
     </body>
 </html>
