@@ -44,7 +44,7 @@
       
     </head>
     <body class="text-center">
-		<a href="${pageContext.request.contextPath}/product/list.do">주문 페이지</a>
+		
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
