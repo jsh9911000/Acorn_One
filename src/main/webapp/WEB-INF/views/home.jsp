@@ -44,8 +44,7 @@
       
     </head>
     <body class="text-center">
-        
-
+		
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
@@ -98,13 +97,11 @@
 			            <h2><strong>${sessionScope.id }</strong>님 </h2>
 			            <h3>즐거운 하루 되세요!</h3>
 			            </div>
+						<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
 		           </form> 
 				</div>
 				</c:otherwise>
 			</c:choose>
-        
-        
-
     </body>
 </html>

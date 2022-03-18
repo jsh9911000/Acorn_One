@@ -3,6 +3,7 @@ package com.one.project.users.controller;
 import java.net.URLEncoder;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,14 @@ public class UsersController {
 	
 	@Autowired
 	private UsersService service;
+	
+	//로그아웃 요청 처리
+	@RequestMapping("/users/logout")
+	public String logout(HttpSession session) {
+		//세션에서 id 라는 키값으로 저장된 값 삭제 
+		session.removeAttribute("id");
+		return "users/logout";
+	}
 	
 	//회원 가입 요청 처리
 	@RequestMapping(value = "/signup_form", method = RequestMethod.GET)
@@ -45,6 +54,19 @@ public class UsersController {
 		mView.setViewName("users/sign");
 		return mView;
 	}
+	
+	//회원 정보 페이지 처리
+	
+	@RequestMapping("/users/info")
+	public ModelAndView authInfo(HttpSession session, ModelAndView mView, 
+			HttpServletRequest request) {
+		
+		service.getInfo(session, mView);
+		
+		mView.setViewName("users/info");
+		return mView;
+	}
+	
 	//회원 탈퇴 요청 처리
 
 	//회원 정보 수정 폼 요청 처리
@@ -69,10 +91,5 @@ public class UsersController {
 		mView.setViewName("users/login");
 		return mView;
 	}
-	//로그아웃
-	@RequestMapping("/users/logout")
-	public String logout(HttpSession session) {
-		session.removeAttribute("id");
-		return "users/logout";
-	}
+
 }

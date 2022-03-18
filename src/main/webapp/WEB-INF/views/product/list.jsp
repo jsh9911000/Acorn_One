@@ -36,7 +36,6 @@
                      <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
                  </svg>
          <a class="navbar-brand" href="#">KIOSK</a>
-         <p>${sessionScope.id }님 로그인중</p>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -44,11 +43,27 @@
            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     
-                </a>
+               			<c:choose>
+               				<c:when test="${not empty sessionScope.id }">
+               					<strong>${sessionScope.id }</strong>님이 로그인 중입니다.
+               				</c:when>
+               				<c:otherwise>
+               					<strong>로그인이 필요합니다</strong>
+               				</c:otherwise>
+               			</c:choose>
+               </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <li><a class="dropdown-item" href="#">회원가입</a></li>
-                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>
+               		<c:choose>
+               			<c:when test="${not empty sessionScope.id }">
+               				<li><strong>${sessionScope.id }님이 로그인 중입니다.</strong></li>
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/info.do">회원정보 수정</a></li>
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>               				
+               			</c:when>
+               			<c:otherwise>
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/signup_form.do">회원가입</a></li>
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/home.do">로그인</a></li>                 		
+               			</c:otherwise>
+               		</c:choose>
                </ul>
              </li>
               <li class="nav-item"> 
@@ -62,6 +77,7 @@
              </li>
              <li class="nav-item">
                <a class="nav-link active" aria-current="page" href="#">음료</a>
+
              </li>
            </ul>
          </div>
