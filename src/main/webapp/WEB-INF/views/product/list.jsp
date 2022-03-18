@@ -27,6 +27,8 @@
      </style>
      
      <body>
+    
+    
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <div class="container-fluid">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
@@ -46,10 +48,10 @@
                 </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <li><a class="dropdown-item" href="#">회원가입</a></li>
-                 <li><a class="dropdown-item" href="#">로그인</a></li>
+                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>
                </ul>
              </li>
-              <li class="nav-item">
+              <li class="nav-item"> 
                <a class="nav-link active" aria-current="page" href="#">전체메뉴</a>
              </li>
             <li class="nav-item">
@@ -161,7 +163,7 @@
 					<table>
 						<thead>
 							<tr>
-							
+								<th>주문자</th>
 								<th>음식</th>
 								<th>가격</th>
 								<th>삭제</th>
@@ -172,7 +174,7 @@
 						<tbody>
 						<c:forEach var="tmp" items="${list }">
 							<tr>
-								
+								<td>${tmp.u_name }</td>
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
 								<td>

@@ -69,4 +69,10 @@ public class UsersController {
 		mView.setViewName("users/login");
 		return mView;
 	}
+	//로그아웃
+	@RequestMapping("/users/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("id");
+		return "users/logout";
+	}
 }

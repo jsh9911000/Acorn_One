@@ -16,7 +16,6 @@
     	background-image:url(background/back1.jpg);
     	background-repeat:repeat;
     	background-size :auto ;
-
     	background-image:url(background/back1.jpg);
     	background-repeat:repeat;
 	    background-size : auto;
@@ -25,14 +24,12 @@
         body {
         height: 100%;
         }
-
         body {
         display: flex;
         align-items: center;
         padding-top: 200px;
         padding-bottom: 40px;
         }
-
         .container {
         width: 100%;
         max-width: 330px;
@@ -48,6 +45,7 @@
     </head>
     <body class="text-center">
         
+
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
@@ -107,5 +105,6 @@
 			</c:choose>
         
         
+
     </body>
 </html>
