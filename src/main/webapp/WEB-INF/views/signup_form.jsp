@@ -31,7 +31,7 @@
                 <div class="form-floating mb-3">
                   <input type="password" class="form-control rounded-4" id="pwd" name="pwd" placeholder="Password">
                   <label class="control-label" for="pwd">Password</label>
-                  <small class="form-text text-muted">영어 대문자와 소문자, 숫자, 특수기호(!@#$%)를 조합하여 10~15글자 내로 입력하세요.</small>
+                  <small class="form-text text-muted">영어소문자와 숫자를 조합하여 10글자 이내로 입력하세여</small>
                   <div class="invalid-feedback">비밀번호를 확인하세요.</div>                  
                 </div>
                 <div class="form-floating mb-3">
@@ -122,8 +122,8 @@
 		const pwd2=document.querySelector("#pwd2").value;		
 	
 		//영어 대문자와 소문자, 숫자, 특수기호(!@#$)를 하나씩 조합하여 10~15글자 정규식
-		const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
-
+		//const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
+		const reg_pwd=/^[a-z].{4,9}$/;
 		
 		if(!reg_pwd.test(pwd)){
 			isPwdValid=false;
