@@ -49,4 +49,11 @@ public class BasketsServieImpl implements BasketsService{
 		
 	}
 
+
+	@Override
+	public void moveBasket() {
+		dao.move();
+		
+	}
+
 }
