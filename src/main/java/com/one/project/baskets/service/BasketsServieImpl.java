@@ -2,6 +2,7 @@ package com.one.project.baskets.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class BasketsServieImpl implements BasketsService{
 
 	@Override
 	public void saveBasket(String p_name,int p_price,String u_name) {
-		//String name=(String)request.getSession().getAttribute("name");
+		//String u_name=(String)request.getSession().getAttribute("id");
 		BasketsDto dto = new BasketsDto();
 		dto.setP_name(p_name);
 		dto.setP_price(p_price);

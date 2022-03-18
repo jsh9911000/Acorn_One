@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
 <html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -28,6 +28,8 @@
      </style>
      
      <body>
+    
+    
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <div class="container-fluid">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
@@ -74,7 +76,6 @@
 				  	<form action="insert.do">
 						<input type="text" name="p_name" value="짜파게티1" readonly="readonly"><br>
 						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
-						<input type="text" name="u_name" value="${sessionScope.id }" readonly="readonly"><br>
 						<p class="card-text">3,000원</p>
 						<input type="submit" class="btn btn-primary" value="구매">
 					</form> 

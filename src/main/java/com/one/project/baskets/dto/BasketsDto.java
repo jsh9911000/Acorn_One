@@ -27,7 +27,7 @@ public class BasketsDto {
 	}
 
 
-	public void setU_name(String u_num) {
+	public void setU_name(String u_name) {
 		this.u_name = u_name;
 	}
 
