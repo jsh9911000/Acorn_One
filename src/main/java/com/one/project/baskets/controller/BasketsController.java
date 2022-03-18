@@ -52,4 +52,11 @@ public class BasketsController {
 		return "redirect:/product/list.do";
 	}
 	
+	@RequestMapping("/product/move")
+	public String move(HttpServletRequest request) {
+		
+		service.moveBasket();
+		return "redirect:/product/pay.do";
+	}
+	
 }

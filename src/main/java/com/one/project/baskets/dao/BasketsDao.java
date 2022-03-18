@@ -9,4 +9,5 @@ public interface BasketsDao {
 	public void insert(BasketsDto dto);
 	public void delete(BasketsDto dto);
 	public void pay();
+	public void move();
 }
