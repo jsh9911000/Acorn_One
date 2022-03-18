@@ -50,17 +50,14 @@
                		<c:choose>
                			<c:when test="${not empty sessionScope.id }">
                				<li><strong>${sessionScope.id }님이 로그인 중입니다.</strong></li>
-                 			<li><a class="dropdown-item" href="#">정보 수정</a></li>
-                 			<li><a class="dropdown-item" href="#">로그아웃</a></li>               				
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/info.do">회원정보 수정</a></li>
+                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>               				
                			</c:when>
                			<c:otherwise>
                  			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/signup_form.do">회원가입</a></li>
                  			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/home.do">로그인</a></li>                 		
                			</c:otherwise>
-               		
                		</c:choose>
-                 <li><a class="dropdown-item" href="#">회원가입</a></li>
-                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>
                </ul>
              </li>
               <li class="nav-item"> 

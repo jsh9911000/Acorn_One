@@ -46,7 +46,7 @@
       
     </head>
     <body class="text-center">
-
+		<a href="${pageContext.request.contextPath}/product/list.do">주문 페이지</a>
         	<c:choose>
 				<c:when test="${ empty sessionScope.id}"><!-- 로그인 안된 상태 -->
 				<div class="container ">
@@ -95,12 +95,10 @@
 								<input type="hidden" name="url" value="${param.url }"/>
 							</c:otherwise>
 						</c:choose>
-						<a href="">
-							<button class="btn btn-lg btn-warning">로그아웃 하기</button>
-						</a>            
 						<div class="form-floating">
 			            <h2><strong>${sessionScope.id }</strong>님 로그인중...</h2>
 			            </div>
+						<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
 		           </form> 
 				</div>

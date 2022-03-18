@@ -3,6 +3,7 @@ package com.one.project.users.controller;
 import java.net.URLEncoder;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,19 @@ public class UsersController {
 		mView.setViewName("users/sign");
 		return mView;
 	}
+	
+	//회원 정보 페이지 처리
+	
+	@RequestMapping("/users/info")
+	public ModelAndView authInfo(HttpSession session, ModelAndView mView, 
+			HttpServletRequest request) {
+		
+		service.getInfo(session, mView);
+		
+		mView.setViewName("users/info");
+		return mView;
+	}
+	
 	//회원 탈퇴 요청 처리
 
 	//회원 정보 수정 폼 요청 처리
