@@ -29,10 +29,10 @@ public class BasketsController {
 	public String insert(HttpServletRequest request) {
 		String p_name = (String)request.getParameter("p_name");
 		int p_price = Integer.parseInt(request.getParameter("p_price"));
-		
+		String u_name = (String)request.getParameter("u_name");
 		
 		//service.saveBasket(request);
-		service.saveBasket(p_name,p_price);
+		service.saveBasket(p_name,p_price,u_name);
 		return "redirect:/product/list.do";
 	}
 	@RequestMapping("/product/delete")

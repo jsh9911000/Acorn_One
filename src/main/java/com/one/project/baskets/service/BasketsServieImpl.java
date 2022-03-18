@@ -24,11 +24,12 @@ public class BasketsServieImpl implements BasketsService{
 
 
 	@Override
-	public void saveBasket(String p_name,int p_price) {
+	public void saveBasket(String p_name,int p_price,String u_name) {
 		//String name=(String)request.getSession().getAttribute("name");
 		BasketsDto dto = new BasketsDto();
 		dto.setP_name(p_name);
 		dto.setP_price(p_price);
+		dto.setU_name(u_name);
 		dao.insert(dto);
 	}
 

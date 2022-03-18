@@ -65,6 +65,7 @@
 				<input type="hidden" name="url" value="${param.url }"/>
 			</c:otherwise>
 		</c:choose>
+
             <div class="form-floating">
                 <input type="text" class="form-control" id="id" name="id" placeholder="ID">
                 <label for="id">ID</label>
@@ -78,7 +79,10 @@
             <button class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
 
             </form>
+            
         </div>
+
+	
         <a href="${pageContext.request.contextPath}/product/list.do"">주문목록</a>
     </body>
 </html>

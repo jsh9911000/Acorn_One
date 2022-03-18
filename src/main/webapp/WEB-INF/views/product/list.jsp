@@ -74,6 +74,7 @@
 				  	<form action="insert.do">
 						<input type="text" name="p_name" value="짜파게티1" readonly="readonly"><br>
 						<input type="hidden" name="p_price" value="3000" readonly="readonly"><br>
+						<input type="text" name="u_name" value="${sessionScope.id }" readonly="readonly"><br>
 						<p class="card-text">3,000원</p>
 						<input type="submit" class="btn btn-primary" value="구매">
 					</form> 
@@ -161,7 +162,7 @@
 					<table>
 						<thead>
 							<tr>
-							
+								<th>주문자</th>
 								<th>음식</th>
 								<th>가격</th>
 								<th>삭제</th>
@@ -172,7 +173,7 @@
 						<tbody>
 						<c:forEach var="tmp" items="${list }">
 							<tr>
-								
+								<td>${tmp.u_name }</td>
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
 								<td>
