@@ -21,7 +21,7 @@
             </div>
       	
             <div class="modal-body p-5 pt-0">
-              <form class="" action="${pageContext.request.contextPath}/users/sign.do" method="post">
+              <form class="" action="${pageContext.request.contextPath}/users/sign.do" method="post" id="myForm">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control rounded-4" id="id" name="id" placeholder="ID">
                   <label class="control-label" for="id">ID</label>
@@ -52,10 +52,15 @@
 	                </div>
                 -->
 				<div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio" name="gender" value="man" class="custom-control-input" checked>
-				  <label class="custom-control-label" for="customRadio1">남자</label>
-				  <input type="radio" id="customRadio" name="gender" value="woman" class="custom-control-input">
-				  <label class="custom-control-label" for="customRadio2">여자</label>
+				  <legend>성별 정보 선택</legend>
+				  <label class="custom-control-label">
+				   	<input type="radio" name="gender" value="man" class="custom-control-input" checked>
+				   	남자
+				  </label>
+				  <label class="custom-control-label">
+				   	<input type="radio" name="gender" value="woman" class="custom-control-input">
+				   	여자
+				  </label>
 				</div>
                 <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">회원가입</button>
                 <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
@@ -66,8 +71,7 @@
             </div>
           </div>
         </div>
-<script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
-
+<script src="${pageContext.request.contextPath}/js/gura_util.js"></script>
 <script>
 	let isIdValid=false;
 	let isPwdValid=false;
@@ -80,6 +84,7 @@
 		document.querySelector("#id").classList.remove("is-invalid");
 		
 		let inputId=this.value;
+		console.log(inputId);
 		//영어와 숫자를 하나씩 조합해서 5~10글자 정규식
 		const reg_id=/^(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{5,10}$/;
 		
@@ -106,7 +111,6 @@
 		});
 	});
 	
-	
 	function checkPwd(){
 		
 		document.querySelector("#pwd").classList.remove("is-valid");
@@ -116,8 +120,8 @@
 		
 		const pwd=document.querySelector("#pwd").value;
 		const pwd2=document.querySelector("#pwd2").value;		
-		
-		//영어 대문자와 소문자, 숫자, 특수기호(!@#$%)를 하나씩 조합하여 10~15글자 정규식
+	
+		//영어 대문자와 소문자, 숫자, 특수기호(!@#$)를 하나씩 조합하여 10~15글자 정규식
 		const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
 
 		
@@ -137,10 +141,11 @@
 			isPwdValid2=true;
 			document.querySelector("#pwd2").classList.add("is-valid");			
 		}
-	}		
-		document.querySelector("#pwd").addEventListener("input", checkPwd);
-		document.querySelector("#pwd2").addEventListener("input", checkPwd);
-
+	}	
+		
+	document.querySelector("#pwd").addEventListener("input", checkPwd);
+	document.querySelector("#pwd2").addEventListener("input", checkPwd);
+		
 		
 	function checkName(){
 		document.querySelector("#name").classList.remove("is-valid");
@@ -156,11 +161,12 @@
 			document.querySelector("#name").classList.add("is-invalid");
 			return;
 		}else{
-			isNameValid=ture;
+			isNameValid=true;
 			document.querySelector("#name").classList.add("is-valid");
 		}		
 	}	
 	document.querySelector("#name").addEventListener("input", checkName);
+	
 	/*
 		function checkAge(){
 			document.querySelector("#age").classList.remove("is-valid");
@@ -182,13 +188,34 @@
 		}
 		document.querySelector("#age").addEventListener("input", checkAge);
 	*/
+
 	document.querySelector("#myForm").addEventListener("submit", function(e){
 		let isFormValid = isIdValid && isPwdValid && isPwdValid2 && isNameValid;
 		if(!isFormValid){//폼이 유효하지 않으면
 			//폼 전송 막기 
 			e.preventDefault();
-		}	
+		}
 	});	
+	
+
+	document.querySelector("#pwd").addEventListener("input", function(){
+		let inputPwd=this.value;
+		console.log(inputPwd);
+	});
+	document.querySelector("#pwd2").addEventListener("input", function(){
+		let inputPwd2=this.value;
+		console.log(inputPwd2);
+	});
+	document.querySelector("#name").addEventListener("input", function(){
+		let inputName=this.value;
+		console.log(inputName);
+	});
+
+	//바뀌지 않는 건지 바뀐 값이 안 나오는 건지
+
+	var checkedGender = document.querySelector("input[name='gender']:checked")
+	console.log(checkedGender.value)
+
 </script>
 
 </body>

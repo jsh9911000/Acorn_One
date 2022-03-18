@@ -1,13 +1,16 @@
 package com.one.project.users.controller;
 
 import java.net.URLEncoder;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.one.project.users.dto.UsersDto;
@@ -20,9 +23,30 @@ public class UsersController {
 	private UsersService service;
 	
 	//회원 가입 요청 처리
+	@RequestMapping(value = "/signup_form", method = RequestMethod.GET)
+	public String signupForm() {
+		return "signup_form";
+	}
 	
+	//아이디 중복 확인을 해서 json 문자열을 리턴해주는 메소드
+	@RequestMapping("/users/checkid")
+	@ResponseBody
+	public Map<String, Object> checkid(@RequestParam String inputId){
+		//UsersService 가 리턴해주는 Map 을 리턴해서 json 문자열을 응답한다. 
+		return service.isExistId(inputId);
+	}	
+	
+	//회원 가입 요청 처리 ( post 방식 요청은 요청 method 를 명시하는것이 좋다.
+	@RequestMapping(value = "/users/sign", method = RequestMethod.POST)
+	public ModelAndView signup(ModelAndView mView, UsersDto dto) {
+		
+		service.addUser(dto);
+		
+		mView.setViewName("users/sign");
+		return mView;
+	}
 	//회원 탈퇴 요청 처리
-	//지워주세여
+
 	//회원 정보 수정 폼 요청 처리
 	
 	//회원 정보 수정 폼 처리

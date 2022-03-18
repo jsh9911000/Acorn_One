@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>/views/member/update.jsp</title>
 </head>
 <body>
 
-	<!-- update ÆäÀÌÁö ¾î¶»°Ô ¸¸µé¾î º¼±î¿ä? -->
+	<!-- update íŽ˜ì´ì§€ ì–´ë–»ê²Œ ë§Œë“¤ì–´ ë³¼ê¹Œìš”? -->
 	
 </body>
 </html>
