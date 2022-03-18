@@ -12,13 +12,13 @@
 	<h1>알림</h1>
     <c:choose>
 		<c:when test="${not empty sessionScope.id }">
-				<script>
+			<script>
 					alert("로그인 되었습니다.");
-					location.href="${pageContext.request.contextPath}/product/list.do";
-				</script>
+					location.href="${requestScope.url }";
+			</script>
 		</c:when>
 		<c:otherwise>
-				<script>
+			<script>
 					alert("아이디 혹은 비밀 번호가 틀려요");
 					location.href="${pageContext.request.contextPath}/";
 				</script>
