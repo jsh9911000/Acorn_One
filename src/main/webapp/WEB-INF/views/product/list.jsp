@@ -209,7 +209,9 @@
 							</tr>
 						</thead>
 						<tbody>
+						
 						<c:set var="total" value="0"/>
+				
 						<c:forEach var="tmp" items="${list }">
 							
 							<tr>
@@ -230,11 +232,12 @@
 							</tr>
 							<c:set var="total" value="${total +tmp.p_price}"/>
 						</c:forEach>
-						<c:out value="${total }"/>
 						<tr>
-							<td>총 금액 : ${total }원</td>
-						</tr>
+							<td><c:out value="총금액 : ${total }원"/></td>
+						</tr>				
+		
 						</tbody>
+		
 					</table>
                  </div>
             </div>
