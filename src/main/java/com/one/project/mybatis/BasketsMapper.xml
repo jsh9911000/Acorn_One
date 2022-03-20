@@ -26,6 +26,5 @@
 	</delete>	
 	<insert id="move" parameterType="com.one.project.baskets.dto.BasketsDto">
 		INSERT INTO master SELECT * FROM baskets
-
 	</insert>
 </mapper>
