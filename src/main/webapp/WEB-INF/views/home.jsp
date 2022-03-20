@@ -99,6 +99,10 @@
 			            </div>
 						<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
+			            <c:if test="${sessionScope.id eq'master1'}">   
+			            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">매출표</button>
+			            </c:if>
+	
 		           </form> 
 				</div>
 				</c:otherwise>
