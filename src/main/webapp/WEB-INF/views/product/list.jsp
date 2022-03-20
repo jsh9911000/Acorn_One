@@ -259,7 +259,10 @@
 				const isDelete=confirm("결제 하시겠습니까?");
 				if(isDelete){
 					location.href="${pageContext.request.contextPath}/product/move.do";
+					alert("결제되었습니다");
 					//location.href="${pageContext.request.contextPath}/product/pay.do";
+				}else{
+					alert("결제가 취소되었습니다");
 				}
 			}
 		</script> 
