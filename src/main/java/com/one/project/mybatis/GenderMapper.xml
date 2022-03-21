@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gender">
+
+	<update id="plusman" parameterType="String">
+		UPDATE reco
+		SET man=man+1
+		WHERE p_name=#{p_name}
+	</update>
+	
+	<update id="minusman" parameterType="String">
+		UPDATE reco
+		SET man=man-1
+		WHERE p_name=#{p_name}
+	</update>
+	
+	<update id="minuswoman" parameterType="String">
+		UPDATE reco
+		SET woman=woman-1
+		WHERE p_name=#{p_name}
+	</update>
+	
+	<update id="pluswoman" parameterType="String">
+		UPDATE reco
+		SET woman=woman+1
+		WHERE p_name=#{p_name}
+	</update>	
+</mapper>
