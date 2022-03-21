@@ -77,6 +77,7 @@
 
                 <h3><c:out value="총금액 : ${total }원"/></h3>
 	         	<button type="button" class="btn btn-danger btn-xl" onclick="javascript:clearConfirm()">전체 삭제</button>
+	         	<a href="${pageContext.request.contextPath}/product/upload_form.do">사진 업로드 하러 가기</a>
            </div>       
           </div>
         </div>
