@@ -73,7 +73,7 @@ public class BasketsController {
 	@RequestMapping("/product/addgender")
 	public String addgender(HttpServletRequest request) {
 		
-		service.addGender();
+
 		return "redirect:/product/insert.do";
 	}
 	
