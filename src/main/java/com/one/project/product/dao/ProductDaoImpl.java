@@ -29,7 +29,7 @@ public class ProductDaoImpl implements ProductDao {
 	public ProductDto getData(int num) {
 		return session.selectOne("product.getData", num);
 	}
-
+	
 	@Override
 	public void delete(int num) {
 		session.delete("product.delete", num);
@@ -39,8 +39,6 @@ public class ProductDaoImpl implements ProductDao {
 	public void update(ProductDto dto) {
 		session.update("product.update", dto);
 	}
-
-
 
 	
 }

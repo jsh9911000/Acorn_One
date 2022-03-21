@@ -99,11 +99,14 @@
 			            </div>
 						<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
 			            <button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
+			            <br />
 			            <c:if test="${sessionScope.id eq'master1'}">   
 			            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">매출표</button>
-			            	<a href="${pageContext.request.contextPath}/product/upload_form.do">사진 업로드 하러 가기</a>
+			            	<br />
+			            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">사진 업로드 하러 가기</button>
+			            	<br />
+			            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">메뉴 수정하기</button>
 			            </c:if>
-	
 		           </form> 
 				</div>
 				</c:otherwise>

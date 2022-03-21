@@ -12,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.multipart.MultipartFile;
-
-
+import org.springframework.web.servlet.ModelAndView;
 
 import com.one.project.product.dao.ProductDao;
 
@@ -86,19 +85,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public void delete(int pro_num, HttpServletRequest request) {
-		dao.delete(pro_num);
-		
-	}
-
-	@Override
-	public void getData(HttpServletRequest request) {
-		//수정할 글번호
-		int num=Integer.parseInt(request.getParameter("num"));
-		//수정할 글의 정보 얻어와서 
-		ProductDto dto=dao.getData(num);
-		//request 에 담아준다.
-		request.setAttribute("dto", dto);
+	public void delete(int num) {
+		dao.delete(num);
 		
 	}
 
@@ -110,6 +98,15 @@ public class ProductServiceImpl implements ProductService{
 		request.setAttribute("list", list);
 		
 	}
+
+
+	@Override
+	public void getData(int num, ModelAndView mView) {
+		ProductDto dto=dao.getData(num);
+		mView.addObject("dto", dto);
+		
+	}
+
 
 
 }

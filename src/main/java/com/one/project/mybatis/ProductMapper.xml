@@ -10,20 +10,26 @@
 	</insert>
 	
 	<select id="getList" parameterType="productDto" resultType="productDto">
-		SELECT *
+		SELECT pro_num, pro_name, pro_price, remain_stock
 		FROM products
-		ORDER BY pro_num DESC
+		ORDER BY pro_num ASC
 	</select>
 	
 	<update id="update" parameterType="productDto">
 		UPDATE PRODUCTS
 		SET pro_name=#{pro_name}, pro_price=#{pro_price}, remain_stock=#{remain_stock}
-		WHERE pro_num=#{num}
+		WHERE pro_num=#{pro_num}
 	</update>
+	
+	<select id="getData" parameterType="int" resultType="productDto">
+		SELECT pro_name, pro_price, remain_stock
+		FROM PRODUCTS
+		WHERE pro_num=#{pro_num}
+	</select>
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM PRODUCTS
-		WHERE pro_num=#{num}
+		WHERE pro_num=#{pro_num}
 	</delete>
 
 </mapper>
