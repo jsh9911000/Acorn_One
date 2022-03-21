@@ -408,6 +408,7 @@
 								<td>
 									<form action="delete.do">
 										<input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly">
+										<input type="hidden" name="p_name" value="${tmp.p_name }" readonly="readonly">
 										<input type="submit" value="삭제">
 									</form> 
 								</td>
@@ -444,7 +445,8 @@
 				}else{
 					alert("결제가 취소되었습니다");
 				}
-
+			}
+			
 		</script> 
      </body>
      </html>

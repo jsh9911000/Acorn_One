@@ -27,9 +27,10 @@
 	<insert id="move" parameterType="com.one.project.baskets.dto.BasketsDto">
 		INSERT INTO master SELECT * FROM baskets
 	</insert>
-	<update id="addgender" parameterType="com.one.project.baskets.dto.BasketsDto">
+
+	<update id="plusMan" parameterType="int">
 		UPDATE reco
-		SET man = man+1
-		where p_name = #{p_name} 	
+		SET man=man+1
+		WHERE p_name=#{p_name}
 	</update>
 </mapper>

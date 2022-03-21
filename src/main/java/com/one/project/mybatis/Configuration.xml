@@ -12,5 +12,6 @@
 		<mapper resource="com/one/project/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/one/project/mybatis/BasketsMapper.xml"/>
 		<mapper resource="com/one/project/mybatis/MasterMapper.xml"/>
+		<mapper resource="com/one/project/mybatis/GenderMapper.xml"/>
 	</mappers>
 </configuration>
