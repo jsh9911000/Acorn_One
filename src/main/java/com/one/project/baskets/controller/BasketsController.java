@@ -34,8 +34,9 @@ public class BasketsController {
 
 		HttpSession session = request.getSession();
 		String u_name= (String)session.getAttribute("id");
+		String gender = (String)session.getAttribute("gender");
 
-		service.saveBasket(p_name,p_price,u_name);
+		service.saveBasket(p_name,p_price,u_name,gender);
 		return "redirect:/product/list.do";
 	}
 	@RequestMapping("/product/delete")
