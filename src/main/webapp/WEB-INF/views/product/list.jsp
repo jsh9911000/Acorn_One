@@ -261,7 +261,7 @@
 					location.href="${pageContext.request.contextPath}/product/move.do";
 					//location.href="${pageContext.request.contextPath}/product/pay.do";
 				}
-			}
+
 		</script> 
      </body>
      </html>

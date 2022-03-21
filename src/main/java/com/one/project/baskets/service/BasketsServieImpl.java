@@ -57,4 +57,10 @@ public class BasketsServieImpl implements BasketsService{
 		
 	}
 
+
+	@Override
+	public void addGender() {
+		dao.addGender();
+	}
+
 }

@@ -12,6 +12,7 @@ public interface BasketsService {
 	public void getListMember(ModelAndView mView);
 	//public void saveBasket(HttpServletRequest request);
 	public void saveBasket(String p_name, int p_price, String u_name,String gender);
+	public void addGender();
 	public void deleteBasket(int b_num);
 	public void payBasket();
 	public void moveBasket();

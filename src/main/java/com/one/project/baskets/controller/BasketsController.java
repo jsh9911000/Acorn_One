@@ -61,4 +61,11 @@ public class BasketsController {
 		return "redirect:/product/pay.do";
 	}
 	
+	@RequestMapping("/product/addgender")
+	public String addgender(HttpServletRequest request) {
+		
+		service.addGender();
+		return "redirect:/product/insert.do";
+	}
+	
 }
