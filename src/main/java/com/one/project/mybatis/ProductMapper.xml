@@ -8,4 +8,5 @@
         VALUES(products_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0, #{remain_stock} #{imagePath})
     </insert>
 
+
 </mapper>

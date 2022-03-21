@@ -14,7 +14,7 @@ public class ProductDaoImpl implements ProductDao {
 	private SqlSession session;
 	
 	@Override
-	public void insert(ProductDto dto) {
+	public void insert2(ProductDto dto) {
 		session.insert("product.insert", dto);
 	}
 	
