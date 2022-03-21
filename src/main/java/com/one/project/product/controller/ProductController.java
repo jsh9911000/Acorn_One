@@ -11,8 +11,4 @@ import com.one.project.product.dto.ProductDto;
 @Controller	
 public class ProductController {
 
-	@RequestMapping
-	public ModelAndView authUpload(ProductDto dto, HttpServletRequest request) {
-		
-	}
 }
