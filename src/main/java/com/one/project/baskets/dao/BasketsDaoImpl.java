@@ -47,11 +47,4 @@ public class BasketsDaoImpl implements BasketsDao {
 		
 	}
 
-	@Override
-	public void addGender() {
-		session.update("baskets.addgender");
-		
-	}
-
-
 }
