@@ -2,6 +2,7 @@ package com.one.project.product.service;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,7 +79,10 @@ public class ProductServiceImpl implements ProductService{
 		dao.insert2(dto);
 		
 	}
-		
+	@Override
+	public List<ProductDto> getProductList() {
+		return dao.getProductList();
+	}	
 		
 	}
 	

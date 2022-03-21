@@ -133,7 +133,7 @@
 		    <label for="tab1" class="b">전체메뉴</label>
 		 
 		    <input id="tab2" class="a" type="radio" name="tabs">
-		    <label for="tab2" class="b">라면</label>
+		    <label for="tab2" class="b">분식</label>
 			
 			<input id="tab3" class="a" type="radio" name="tabs">
 		    <label for="tab3" class="b">식사</label>
@@ -143,245 +143,93 @@
 		    
     <section id="content1">
     	<div class="card-group" style="overflow: auto; height: 600px;">
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-			  		<form action="insert.do">
-						<input type="hidden" name="p_name" value="짜파게티" readonly="readonly">
-						<input type="hidden" name="p_price" value="3000" readonly="readonly">
-				  		<h5 class="card-title">짜파게티</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form>
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/dduk.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	 <form action="insert.do">
-						<input type="hidden" name="p_name" value="떡볶이" readonly="readonly">
-						<input type="hidden" name="p_price" value="3000" readonly="readonly">
-						<h5 class="card-title">떡볶이</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/spam.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="스팸마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">스팸마요덮밥</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/tuna.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="참치마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">참치마요덮밥</h5>
-						<p class="card-text">3,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/chicken.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				 	<form action="insert.do">
-						<input type="hidden" name="p_name" value="치킨마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">치킨마요덮밥</h5>
-						<p class="card-text">3,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/kimchi.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="김치볶음밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="4500" readonly="readonly">
-						<h5 class="card-title">김치볶음밥</h5>
-						<p class="card-text">4,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/no6.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="제육덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="4500" readonly="readonly">
-						<h5 class="card-title">제육덮밥</h5>
-						<p class="card-text">4,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/five3.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="오삼불고기덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="5500" readonly="readonly">
-						<h5 class="card-title">오삼불고기덮밥</h5>
-						<p class="card-text">5,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-         </div>
-         
+    		<c:forEach var="food" items="${foodlist }">
+	    		<div class="col-lg-2">
+	                 <div class="card">
+					  <img src="${food.imagePath }" class="card-img-top" alt="...">
+					  <div class="card-body">
+				  		<form action="insert.do">
+							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+					  		<h5 class="card-title">${food.pro_name }</h5>
+							<p class="card-text">${food.pro_price }</p>
+							<input type="submit" class="btn btn-primary" value="구매">
+						</form>
+					  </div>
+					</div>
+	             </div>
+             </c:forEach>
+          </div>	
 	</section>
+	
     <section id="content2">
     <div class="card-group" style="overflow: auto; height: 600px;">
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-			  		<form action="insert.do">
-						<input type="hidden" name="p_name" value="짜파게티" readonly="readonly">
-						<input type="hidden" name="p_price" value="3000" readonly="readonly">
-				  		<h5 class="card-title">짜파게티</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form>
-				  </div>
-				</div>
-             </div>
+          <c:forEach var="food" items="${foodlist }">
+          <c:if test="${food.pro_cate==1 }">
+	    		<div class="col-lg-2">
+	                 <div class="card">
+					  <img src="${food.imagePath }" class="card-img-top" alt="...">
+					  <div class="card-body">
+				  		<form action="insert.do">
+							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+					  		<h5 class="card-title">${food.pro_name }</h5>
+							<p class="card-text">${food.pro_price }</p>
+							<input type="submit" class="btn btn-primary" value="구매">
+						</form>
+					  </div>
+					</div>
+	             </div>
+	         </c:if>
+             </c:forEach>
+                
      </div>
          
     </section>
     <section id="content3">
     <div class="card-group" style="overflow: auto; height: 600px;">
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/spam.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="스팸마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">스팸마요덮밥</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/tuna.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="참치마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">참치마요덮밥</h5>
-						<p class="card-text">3,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/chicken.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				 	<form action="insert.do">
-						<input type="hidden" name="p_name" value="치킨마요덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="3500" readonly="readonly">
-						<h5 class="card-title">치킨마요덮밥</h5>
-						<p class="card-text">3,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/kimchi.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="김치볶음밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="4500" readonly="readonly">
-						<h5 class="card-title">김치볶음밥</h5>
-						<p class="card-text">4,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/no6.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="제육덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="4500" readonly="readonly">
-						<h5 class="card-title">제육덮밥</h5>
-						<p class="card-text">4,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/five3.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-				  	<form action="insert.do">
-						<input type="hidden" name="p_name" value="오삼불고기덮밥" readonly="readonly">
-						<input type="hidden" name="p_price" value="5500" readonly="readonly">
-						<h5 class="card-title">오삼불고기덮밥</h5>
-						<p class="card-text">5,500원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form> 
-				  </div>
-				</div>
-             </div>
+          <c:forEach var="food" items="${foodlist }">
+          <c:if test="${food.pro_cate==2 }">
+	    		<div class="col-lg-2">
+	                 <div class="card">
+					  <img src="${food.imagePath }" class="card-img-top" alt="...">
+					  <div class="card-body">
+				  		<form action="insert.do">
+							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+					  		<h5 class="card-title">${food.pro_name }</h5>
+							<p class="card-text">${food.pro_price }</p>
+							<input type="submit" class="btn btn-primary" value="구매">
+						</form>
+					  </div>
+					</div>
+	             </div>
+	         </c:if>
+             </c:forEach>   
+             
      </div>
          
     </section>
     <section id="content4">
     <div class="card-group" style="overflow: auto; height: 600px;">
-             <div class="col-lg-2">
-                 <div class="card">
-				  <img src="../food/zza.PNG" class="card-img-top" alt="...">
-				  <div class="card-body">
-			  		<form action="insert.do">
-						<input type="hidden" name="p_name" value="짜파게티" readonly="readonly">
-						<input type="hidden" name="p_price" value="3000" readonly="readonly">
-				  		<h5 class="card-title">짜파게티</h5>
-						<p class="card-text">3,000원</p>
-						<input type="submit" class="btn btn-primary" value="구매">
-					</form>
-				  </div>
-				</div>
-             </div>
+           <c:forEach var="food" items="${foodlist }">
+           <c:if test="${food.pro_cate==3 }">
+	    		<div class="col-lg-2">
+	                 <div class="card">
+					  <img src="${food.imagePath }" class="card-img-top" alt="...">
+					  <div class="card-body">
+				  		<form action="insert.do">
+							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+					  		<h5 class="card-title">${food.pro_name }</h5>
+							<p class="card-text">${food.pro_price }</p>
+							<input type="submit" class="btn btn-primary" value="구매">
+						</form>
+					  </div>
+					</div>
+	             </div>
+	          </c:if>
+             </c:forEach>  
      </div>
          
     </section>

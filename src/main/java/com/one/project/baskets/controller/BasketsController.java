@@ -1,5 +1,7 @@
 package com.one.project.baskets.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.one.project.baskets.service.BasketsService;
+import com.one.project.product.dto.ProductDto;
+import com.one.project.product.service.ProductService;
 
 @Controller
 public class BasketsController {
+	@Autowired
+	private ProductService service2;
 	@Autowired
 	private BasketsService service;
 
@@ -20,7 +26,8 @@ public class BasketsController {
 	public ModelAndView list(ModelAndView mView) {
 
 		service.getListMember(mView);
-		
+		List<ProductDto> list=service2.getProductList();
+		mView.addObject("foodlist",list);                                                                                                                                                                                      
 		mView.setViewName("product/list");
 		//4. ModelAndView 객체를 리턴해 준다.
 		return mView;
