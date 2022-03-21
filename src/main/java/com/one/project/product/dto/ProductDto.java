@@ -6,23 +6,21 @@ public class ProductDto {
 	private int pro_num;
 	private String pro_name;
 	private int pro_price;
-	private int man_sell;
-	private int woman_sell;
 	private int remain_stock;
+	private int pro_cate;
 	private String imagePath;
 	private MultipartFile image;
 	
 	public ProductDto() {}
 
-	public ProductDto(int pro_num, String pro_name, int pro_price, int man_sell, int woman_sell, int remain_stock,
-			String imagePath, MultipartFile image) {
+	public ProductDto(int pro_num, String pro_name, int pro_price, int remain_stock, int pro_cate, String imagePath,
+			MultipartFile image) {
 		super();
 		this.pro_num = pro_num;
 		this.pro_name = pro_name;
 		this.pro_price = pro_price;
-		this.man_sell = man_sell;
-		this.woman_sell = woman_sell;
 		this.remain_stock = remain_stock;
+		this.pro_cate = pro_cate;
 		this.imagePath = imagePath;
 		this.image = image;
 	}
@@ -51,28 +49,20 @@ public class ProductDto {
 		this.pro_price = pro_price;
 	}
 
-	public int getMan_sell() {
-		return man_sell;
-	}
-
-	public void setMan_sell(int man_sell) {
-		this.man_sell = man_sell;
-	}
-
-	public int getWoman_sell() {
-		return woman_sell;
-	}
-
-	public void setWoman_sell(int woman_sell) {
-		this.woman_sell = woman_sell;
-	}
-
 	public int getRemain_stock() {
 		return remain_stock;
 	}
 
 	public void setRemain_stock(int remain_stock) {
 		this.remain_stock = remain_stock;
+	}
+
+	public int getPro_cate() {
+		return pro_cate;
+	}
+
+	public void setPro_cate(int pro_cate) {
+		this.pro_cate = pro_cate;
 	}
 
 	public String getImagePath() {
@@ -90,6 +80,5 @@ public class ProductDto {
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
-	
-	
+
 }
