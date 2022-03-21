@@ -11,6 +11,7 @@ public class ProductDto {
 	private String imagePath;
 	private MultipartFile image;
 	
+	
 	public ProductDto() {}
 
 	public ProductDto(int pro_num, String pro_name, int pro_price, int remain_stock, int pro_cate, String imagePath,
@@ -23,6 +24,19 @@ public class ProductDto {
 		this.pro_cate = pro_cate;
 		this.imagePath = imagePath;
 		this.image = image;
+	}
+	
+
+	public ProductDto(int pro_num, String pro_name, int pro_price, int man_sell, int woman_sell, int remain_stock,
+			String imagePath, MultipartFile image, int pro_cate) {
+		super();
+		this.pro_num = pro_num;
+		this.pro_name = pro_name;
+		this.pro_price = pro_price;
+		this.remain_stock = remain_stock;
+		this.imagePath = imagePath;
+		this.image = image;
+		this.pro_cate = pro_cate;
 	}
 
 	public int getPro_num() {
@@ -80,5 +94,7 @@ public class ProductDto {
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
+
+	
 
 }
