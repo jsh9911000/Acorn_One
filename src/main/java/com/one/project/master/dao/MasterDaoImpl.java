@@ -19,8 +19,8 @@ public class MasterDaoImpl implements MasterDao {
 	}
 
 	@Override
-	public void delete(MasterDto dto) {
-		session.delete("master.delete", dto);
+	public void delete2(MasterDto dto) {
+		session.delete("master.delete2", dto);
 	}
 
 	@Override
