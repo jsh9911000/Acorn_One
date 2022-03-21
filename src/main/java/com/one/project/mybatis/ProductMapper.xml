@@ -5,8 +5,8 @@
 
 	<insert id="insert2" parameterType="productDto">
 		INSERT INTO PRODUCTS
-		(pro_num, pro_name, pro_price, man_sell, woman_sell, remain_stock, imagepath)
-		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0, #{remain_stock} #{imagePath})
+		(pro_num, pro_name, pro_price, remain_stock, pro_cate, imagepath)
+		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, #{remain_stock}, #{pro_cate}, #{imagePath})
 	</insert>
 	
 	<select id="getList" parameterType="productDto" resultType="productDto">

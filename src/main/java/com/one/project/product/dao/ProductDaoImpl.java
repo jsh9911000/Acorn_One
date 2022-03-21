@@ -17,7 +17,7 @@ public class ProductDaoImpl implements ProductDao {
 	
 	@Override
 	public void insert2(ProductDto dto) {
-		session.insert("product.insert", dto);
+		session.insert("product.insert2", dto);
 	}
 
 	@Override
