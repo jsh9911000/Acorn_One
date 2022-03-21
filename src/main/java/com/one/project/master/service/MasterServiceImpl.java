@@ -26,7 +26,7 @@ public class MasterServiceImpl implements MasterService{
 	public void deleteMaster(int b_num) {
 		MasterDto dto = new MasterDto();
 		dto.setB_num(b_num);
-		dao.delete(dto);
+		dao.delete2(dto);
 		
 	}
 

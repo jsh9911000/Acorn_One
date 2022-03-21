@@ -4,15 +4,15 @@
 
 
 	<select id="getList" resultType="com.one.project.baskets.dto.BasketsDto">
-		SELECT p_name, p_price, b_num,u_name
+		SELECT p_name, p_price, b_num,u_name, gender
 		FROM baskets
 		
 	</select>
 	
 	<insert id="insert" parameterType="com.one.project.baskets.dto.BasketsDto">
 		INSERT INTO baskets
-		(p_name,p_price,b_num,u_name)
-		VALUES(#{p_name}, #{p_price}, b_seq.NEXTVAL, #{u_name})
+		(p_name,p_price,b_num,u_name, gender)
+		VALUES(#{p_name}, #{p_price}, b_seq.NEXTVAL, #{u_name}, #{gender})
 	</insert>
 	
 	<delete id="delete" parameterType="com.one.project.baskets.dto.BasketsDto">

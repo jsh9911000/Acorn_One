@@ -3,6 +3,7 @@ package com.one.project.users.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,9 @@ public class UsersServiceImpl implements UsersService{
 		if(isValid) {//만일 유효한 정보이면 
 			//로그인 처리를 한다.
 			session.setAttribute("id", dto.getId());
+			String gender = result.getGender();
+			session.setAttribute("gender", gender);
+			
 		}
 	}
 

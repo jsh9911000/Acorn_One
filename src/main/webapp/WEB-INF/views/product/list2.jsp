@@ -34,6 +34,7 @@
 					<thead>
 						<tr>
 							<th>주문자</th>
+							<th>성별</th>
 							<th>음식</th>
 							<th>가격</th>
 							<th>삭제</th>
@@ -49,8 +50,10 @@
 						
 						<tr>
 							<td>${tmp.u_name }</td>
+							<td>${tmp.gender }</td>
 							<td>${tmp.p_name }</td>
 							<td>${tmp.p_price }</td>
+							
 						
 							
 							<td>
@@ -64,11 +67,14 @@
 							
 						</tr>
 						<c:set var="total" value="${total +tmp.p_price}"/>
+
 					</c:forEach>		
+
 					</tbody>
 	
 				</table>
                 </div>
+
                 <h3><c:out value="총금액 : ${total }원"/></h3>
 	         	<button type="button" class="btn btn-danger btn-xl" onclick="javascript:clearConfirm()">전체 삭제</button>
            </div>       

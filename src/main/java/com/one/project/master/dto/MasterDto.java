@@ -5,17 +5,19 @@ public class MasterDto {
 	private String p_name;
 	private int p_price;
 	private int b_num;
+	private String gender;
 
 	
 	public MasterDto() {}
 
 
-	public MasterDto(String u_name, String p_name, int p_price, int b_num) {
+	public MasterDto(String u_name, String p_name, int p_price, int b_num, String gender) {
 		super();
 		this.u_name = u_name;
 		this.p_name = p_name;
 		this.p_price = p_price;
 		this.b_num = b_num;
+		this.gender = gender;
 	}
 
 
@@ -59,7 +61,15 @@ public class MasterDto {
 	}
 
 
-	
-	
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
 	
 }
