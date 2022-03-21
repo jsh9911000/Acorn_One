@@ -48,19 +48,6 @@ public class ProductServiceImpl implements ProductService{
 			e.printStackTrace();
 		}
 		
-		//dto 에 업로드된 파일의 정보를 담는다.
-		//-> parameer 로 넘어온 dto 에는 caption, image 가 들어 있었다.
-		//-> 추가할 것 : writer(id), imagePath 만 추가로 담아주면 된다.
-		//-> num, regdate : db 에 추가하면서 자동으로 들어감
-		String id = (String)request.getSession().getAttribute("pro_name");
-		dto.setPro_name(id);
-		
-		int price = (Integer)request.getSession().getAttribute("pro_price");
-		dto.setPro_price(price);
-		
-		int stock = (Integer)request.getSession().getAttribute("remain_stock");
-		dto.setRemain_stock(stock);
-		
 		dto.setImagePath("/upload/" + saveFileName);
 		
 		//ProductDao 를 이용해서 DB 에 저장하기
