@@ -17,6 +17,7 @@
 					<thead>
 						<tr>
 							<th>주문자</th>
+							<th>성별</th>
 							<th>음식</th>
 							<th>가격</th>
 							<th>삭제</th>
@@ -32,6 +33,7 @@
 						
 						<tr>
 							<td>${tmp.u_name }</td>
+							<td>${tmp.gender }</td>
 							<td>${tmp.p_name }</td>
 							<td>${tmp.p_price }</td>
 						

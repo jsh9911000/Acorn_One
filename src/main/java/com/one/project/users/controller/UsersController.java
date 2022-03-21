@@ -87,7 +87,6 @@ public class UsersController {
 		String encodedUrl=URLEncoder.encode(url);
 		mView.addObject("url", url);
 		mView.addObject("encodedUrl", encodedUrl);
-		
 		mView.setViewName("users/login");
 		return mView;
 	}
