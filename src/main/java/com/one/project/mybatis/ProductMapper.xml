@@ -9,4 +9,21 @@
 		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0, #{remain_stock} #{imagePath})
 	</insert>
 	
+	<select id="getList" parameterType="productDto" resultType="productDto">
+		SELECT *
+		FROM products
+		ORDER BY pro_num DESC
+	</select>
+	
+	<update id="update" parameterType="productDto">
+		UPDATE PRODUCTS
+		SET pro_name=#{pro_name}, pro_price=#{pro_price}, remain_stock=#{remain_stock}
+		WHERE pro_num=#{num}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM PRODUCTS
+		WHERE pro_num=#{num}
+	</delete>
+
 </mapper>
