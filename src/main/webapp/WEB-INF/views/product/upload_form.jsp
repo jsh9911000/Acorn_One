@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +21,10 @@
 	      	<div>
 	         	<label for="remain_stock">상품재고</label>
 	         	<input type="text" name="remain_stock" id="remain_stock"/>
+	      	</div>
+	      	<div>
+	         	<label for="pro_cate">상품카테고리</label>
+	         	<input type="text" name="pro_cate" id="pro_cate"/>
 	      	</div>
 	      	<div>
 	         	<label for="image">이미지</label>
