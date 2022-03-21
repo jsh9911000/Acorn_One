@@ -36,6 +36,7 @@
 							<td>${tmp.gender }</td>
 							<td>${tmp.p_name }</td>
 							<td>${tmp.p_price }</td>
+							
 						
 							
 							<td>
@@ -51,7 +52,7 @@
 						<c:set var="total" value="${total +tmp.p_price}"/>
 					</c:forEach>
 					<tr>
-						<td><c:out value="총금액 : ${total }원"/></td>
+						<td><c:out value="총매출 : ${total }원"/></td>
 					</tr>				
 	
 					</tbody>
@@ -61,7 +62,7 @@
            </div>
            <div align="right" class="col-lg-4">
 
-	         	<button type="button" class="btn btn-primary btn-xl" onclick="javascript:clearConfirm()">삭제</button>       
+	         	<button type="button" class="btn btn-primary btn-xl" onclick="javascript:clearConfirm()">전체삭제</button>       
           </div>
         </div>
        </div>

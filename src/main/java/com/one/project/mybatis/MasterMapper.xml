@@ -4,13 +4,13 @@
 
 
 	<select id="getList" resultType="com.one.project.master.dto.MasterDto">
-		SELECT  u_name,p_name, p_price, gender
+		SELECT  u_name,p_name, p_price, gender, b_num
 		FROM master
 		ORDER BY u_name
 		
 	</select>
 		
-	<delete id="delete" parameterType="com.one.project.master.dto.MasterDto">
+	<delete id="delete2" parameterType="com.one.project.master.dto.MasterDto">
 		DELETE FROM master
 		WHERE b_num=#{b_num}
 	</delete>
