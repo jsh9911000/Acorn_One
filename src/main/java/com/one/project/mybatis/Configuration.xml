@@ -15,6 +15,5 @@
 		<mapper resource="com/one/project/mybatis/MasterMapper.xml"/>
 		<mapper resource="com/one/project/mybatis/GenderMapper.xml"/>
 		<mapper resource="com/one/project/mybatis/ProductMapper.xml"/>
-
 	</mappers>
 </configuration>

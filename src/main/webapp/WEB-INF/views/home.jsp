@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<!-- ssss -->
 <html>
 <head>
 <meta charset="UTF-8">
@@ -88,12 +87,14 @@
 			            <h2><strong>${sessionScope.id }</strong>님 </h2>
 			            <h3>즐거운 하루 되세요!</h3>
 			        </div>
-					<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button><br />
-		            <button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button><br />
+					<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
+		            <button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
 		            <c:if test="${sessionScope.id eq'master1'}">   
-		            	<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">매출표</button><br />
-		            	<button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">상품 등록</button><br />
+		            	<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">매출표</button>
+		            	<button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">상품 등록</button>
+		            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">메뉴 수정하기</button>
 		            </c:if>
+
 		           </form> 
 				</div>
 		  </div>
