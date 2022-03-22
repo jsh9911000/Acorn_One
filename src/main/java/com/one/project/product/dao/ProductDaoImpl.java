@@ -24,5 +24,26 @@ public class ProductDaoImpl implements ProductDao {
 	public void insert2(ProductDto dto) {
 		session.insert("product.insert2", dto);
 	}
+
+	@Override
+	public List<ProductDto> getList(ProductDto dto) {
+		return session.selectList("product.getList", dto);
+	}
+
+	@Override
+	public ProductDto getData(int num) {
+		return session.selectOne("product.getData", num);
+	}
+	
+	@Override
+	public void delete(int num) {
+		session.delete("product.delete", num);
+	}
+
+	@Override
+	public void update(ProductDto dto) {
+		session.update("product.update", dto);
+	}
+
 	
 }

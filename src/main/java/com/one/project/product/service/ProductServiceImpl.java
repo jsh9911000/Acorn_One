@@ -5,11 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.one.project.product.dao.ProductDao;
 
 import com.one.project.product.dto.ProductDto;
 import com.one.project.product.dao.ProductDao;
@@ -18,7 +24,7 @@ import com.one.project.product.dao.ProductDao;
 public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductDao dao;
-
+	
 	
 	public void saveImage(ProductDto dto, HttpServletRequest request) {
 		//업로드된 파일의 정보를 가지고 있는 MultipartFile 객체의 참조값을 얻어오기
@@ -55,6 +61,9 @@ public class ProductServiceImpl implements ProductService{
 		dao.insert2(dto);
 	}
 		
+
+	
+
 	
 	@Override
 	public void insert2(ProductDto dto, HttpServletRequest request) {
@@ -71,6 +80,38 @@ public class ProductServiceImpl implements ProductService{
 		return dao.getProductList();
 	}	
 		
+
+
+	@Override
+	public void update(ProductDto dto) {
+		dao.update(dto);
+		
 	}
-	
+
+	@Override
+	public void delete(int num) {
+		dao.delete(num);
+		
+	}
+
+	@Override
+	public void getList(HttpServletRequest request) {
+		ProductDto dto=new ProductDto();
+		List<ProductDto> list=dao.getList(dto);
+		
+		request.setAttribute("list", list);
+		
+	}
+
+
+	@Override
+	public void getData(int num, ModelAndView mView) {
+		ProductDto dto=dao.getData(num);
+		mView.addObject("dto", dto);
+		
+	}
+
+
+
+}
 
