@@ -71,7 +71,7 @@
 			                <label for="pwd">Password</label>
 			            </div>
 			
-			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/signup.do'">회원가입</button>
+			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/signup_form.do'">회원가입</button>
 			            <button style="float:left" class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
 		
 		            </form>
