@@ -35,7 +35,7 @@ public class GenderDaoImpl implements GenderDao {
 
 	@Override
 	public void duplicate(String p_name) {
-		session.insert("gender.duplicate", p_name);
+		session.update("gender.duplicate", p_name);
 		
 	}
 
