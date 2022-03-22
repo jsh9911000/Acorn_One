@@ -5,11 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품 등록</title>
+<style>
+        body {
+        	background-color: #212529;
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+</style>
 </head>
 <body>
 	<script>
-		alert("사진 업로드에 성공했습니다.");
+		alert("상품 등록에 성공했습니다.");
 		location.href = "${pageContext.request.contextPath}/product/list2.do";
 	</script>
 </body>

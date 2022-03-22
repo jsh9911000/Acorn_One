@@ -5,7 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>login.jsp</title>
+<title>로그인!</title>
+<style>
+        body {
+        	background-color: #212529;
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+</style>
 </head>
 <body>
 <div class="container">

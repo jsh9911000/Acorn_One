@@ -33,7 +33,7 @@
 	</update>
 	
 	<select id="getData" parameterType="int" resultType="productDto">
-		SELECT pro_name, pro_price, remain_stock
+		SELECT pro_num, pro_name, pro_price, remain_stock
 		FROM PRODUCTS
 		WHERE pro_num=#{pro_num}
 	</select>
