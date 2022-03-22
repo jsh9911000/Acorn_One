@@ -14,8 +14,10 @@
 		<br />
 		${param.num }  param
 	</p>
-	<form action="update.do" method="POST">
-		<input type="hidden" name="num" value="${param.num }"/>
+	<form action="update.do" method="post">
+		<input type="hidden" id="pro_num" value="${dto.pro_num }" />
+		<input type="hidden" name="pro_num" value="${dto.pro_num }" />
+		<input type="hidden" id="pro_num" value="${tmp.dto.pro_num }" />		
 		<div>
 			<label for="name">메뉴명</label>
 			<input type="text" id="name" value="${dto.pro_name }"/>

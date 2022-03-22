@@ -21,29 +21,29 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
-		//gallery 사진 업로드 form 페이지로 이동
-		@RequestMapping("/product/upload_form")
-		public ModelAndView authUploadForm(HttpServletRequest request) {
-			
-			return new ModelAndView("product/upload_form");
-		}
-		//gallery 사진 업로드 & DB 저장
-		@RequestMapping("/product/upload")
-		public ModelAndView authUpload(ProductDto dto, HttpServletRequest request) {
-			//form 에서 dto 로 데이터 받아옴
-			//dto : caption, MultipartFile image 를 가지고 있다.
-			//request :  imagePath 만드는데 사용, session 영역의 id 가져오는데 사용
-			service.saveImage(dto, request);
-			
-			return new ModelAndView("product/upload");
-		}
+	//gallery 사진 업로드 form 페이지로 이동
+	@RequestMapping("/product/upload_form")
+	public ModelAndView authUploadForm(HttpServletRequest request) {
+
+		return new ModelAndView("product/upload_form");
+	}
+	//gallery 사진 업로드 & DB 저장
+	@RequestMapping("/product/upload")
+	public ModelAndView authUpload(ProductDto dto, HttpServletRequest request) {
+		//form 에서 dto 로 데이터 받아옴
+		//dto : caption, MultipartFile image 를 가지고 있다.
+		//request :  imagePath 만드는데 사용, session 영역의 id 가져오는데 사용
+		service.saveImage(dto, request);
+
+		return new ModelAndView("product/upload");
+	}
 		//imagePath 구성 X -> dto 로 imagePath 를 받아서 DB 에 저장하기
 
 	
 	@RequestMapping("/product/updateList")
 	public String list(HttpServletRequest request) {
 		service.getList(request);
-		return "product/updateList";
+		return "product/update";
 	}
 	
 	@RequestMapping("/product/updateForm")
