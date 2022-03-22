@@ -24,7 +24,7 @@ public class ProductController {
 	//gallery 사진 업로드 form 페이지로 이동
 	@RequestMapping("/product/upload_form")
 	public ModelAndView authUploadForm(HttpServletRequest request) {
-
+		
 		return new ModelAndView("product/upload_form");
 	}
 	//gallery 사진 업로드 & DB 저장
@@ -34,7 +34,7 @@ public class ProductController {
 		//dto : caption, MultipartFile image 를 가지고 있다.
 		//request :  imagePath 만드는데 사용, session 영역의 id 가져오는데 사용
 		service.saveImage(dto, request);
-
+		
 		return new ModelAndView("product/upload");
 	}
 	//imagePath 구성 X -> dto 로 imagePath 를 받아서 DB 에 저장하기
@@ -43,7 +43,7 @@ public class ProductController {
 		//dto : caption, imagePath 가지고 있다.
 		//request : dto 에 writer(id) 추가
 		service.insert2(dto, request);
-
+		
 		return new ModelAndView("product/upload");
 	}
 	
