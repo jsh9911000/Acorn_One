@@ -31,31 +31,27 @@ public class ProductServiceImpl implements ProductService{
 		MultipartFile image = dto.getImage();
 		//원본 파일명 -> 저장할 파일 이름 만들기위해서 사용됨
 		String orgFileName = image.getOriginalFilename();
-		//파일 크기 -> 다운로드가 없으므로, 여기서는 필요 없다.
-		long fileSize = image.getSize();
 		
-		// webapp/upload 폴더 까지의 실제 경로(서버의 파일 시스템 상에서의 경로)
-		String realPath = request.getServletContext().getRealPath("/upload");
+		
+		// webapp/food 폴더 까지의 실제 경로(서버의 파일 시스템 상에서의 경로)
+		String realPath = request.getServletContext().getRealPath("/food");
 		//db 에 저장할 저장할 파일의 상세 경로
 		String filePath = realPath + File.separator;
 		//디렉토리를 만들 파일 객체 생성
-		File upload = new File(filePath);
-		if(!upload.exists()) {
+		File food = new File(filePath);
+		if(!food.exists()) {
 			//만약 디렉토리가 존재하지X
-			upload.mkdir();//폴더 생성
+			food.mkdir();//폴더 생성
 		}
-		//저장할 파일의 이름을 구성한다. -> 우리가 직접 구성해줘야한다.
-		String saveFileName = System.currentTimeMillis() + orgFileName;
 		
 		try {
-			//upload 폴더에 파일을 저장한다.
-			image.transferTo(new File(filePath + saveFileName));
+			image.transferTo(new File(filePath + orgFileName));
 			System.out.println();	//임시 출력
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		dto.setImagePath("/upload/" + saveFileName);
+		dto.setImagePath("../food/" + orgFileName);
 		
 		//ProductDao 를 이용해서 DB 에 저장하기
 		dao.insert2(dto);
