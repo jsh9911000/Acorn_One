@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style>
         body {
-        	background-color: rgba(0,0,0,0.85);
+        	background-color: #212529;
 	        padding-top: 200px;
 	        padding-bottom: 40px;
         }
@@ -56,8 +56,8 @@
 			            </div>
 			
 
-			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/signup_form.do'">회원가입</button>
-			            <button style="float:left" class="w-50 btn btn-lg btn-primary" type="submit">로그인</button>
+			            <button style="float:left" class="w-50 btn btn-lg btn-secondary" type="button" onclick="location.href='${pageContext.request.contextPath}/users/signup_form.do'">회원가입</button>
+			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="submit">로그인</button>
 
 		
 		            </form>
@@ -89,12 +89,12 @@
 			            <h2><strong>${sessionScope.id }</strong>님 </h2>
 			            <h3>즐거운 하루 되세요!</h3>
 			        </div>
-					<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
-		            <button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
+					<button class="block btn btn-lg btn-outline-danger" type="button" onclick="location.href='${pageContext.request.contextPath}/users/logout.do'">로그아웃 하기</button>
+		            <button class="block btn btn-lg btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list.do'">상품 목록 가기</button>
 		            <c:if test="${sessionScope.id eq'master1'}">   
-		            	<button class="block btn btn-lg btn btn-outline-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">매출표</button>
-		            	<button class="block btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">상품 등록</button>
-		            	<button class="btn btn-lg btn-warning" type="button" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">메뉴 수정하기</button>
+		            	<button class="block btn btn-lg btn-outline-secondary" type="button" onclick="location.href='${pageContext.request.contextPath}/product/list2.do'">주문 리스트</button>
+		            	<button class="block btn btn-lg btn-outline-secondary" type="button" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">상품 등록</button>
+		            	<button class="block btn btn-lg btn-outline-secondary" type="button" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">메뉴 리스트</button>
 		            </c:if>
 
 		           </form> 

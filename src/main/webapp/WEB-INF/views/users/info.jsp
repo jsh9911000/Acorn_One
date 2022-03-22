@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <style>
         body {
-        	background-color: rgba(0,0,0,0.85);
+        	background-color: #212529;
 	        padding-top: 200px;
 	        padding-bottom: 40px;
         }
@@ -26,7 +26,7 @@
     		<div class="modal-header p-5 pb-4 border-bottom-0">
     			<h2 class="fw-bold mb-0">가입 정보 입니다.</h2>
     			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
-              onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
+              onclick="location.href='${pageContext.request.contextPath}/product/list.do'"></button>
 			</div>
 			<div class="modal-body p-5 pt-0">
 			<table class="table table-hover">

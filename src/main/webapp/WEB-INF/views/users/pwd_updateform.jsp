@@ -4,9 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/views/users/pwd_updateform.jsp</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>비밀번호 변경</title>
+   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+        body {
+        	background-color: #212529;
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+        .block {
+		    display: block;
+		    width: 100%;
+		}
+</style>
 </head>
 <body>
    <div class="modal-dialog" role="document">
@@ -32,7 +43,7 @@
               <label for="newPwd2">새 비밀번호 확인</label>
             </div>
             <br />
-         <button class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="submit">수정하기</button>
+         <button class="block btn btn-lg rounded-4 btn-danger" type="submit">수정하기</button>
          </form>
          </div>
       </div>

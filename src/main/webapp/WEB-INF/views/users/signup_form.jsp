@@ -8,14 +8,25 @@
 <title>Insert title here</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+        body {
+        	background-color: rgba(0,0,0,0.85);
+	        padding-top: 100px;
+	        padding-bottom: 40px;
+        }
+		.block {
+		    display: block;
+		    width: 100%;
+		}
+    </style>
+</head>
 </head>
 <body>
 
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-5 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <!-- <h5 class="modal-title">Modal title</h5> -->
-              <h2 class="fw-bold mb-0">Sign up for free</h2>
+              <h2 class="fw-bold mb-0">회원가입 입니다.</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
               onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
             </div>
@@ -65,7 +76,7 @@
                 <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">회원가입</button>
                 <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                 <hr class="my-4">
-                <h2 class="fs-5 fw-bold mb-3">가입이 완료되면 로그인 페이지로 이동합니다.</h2>
+                <h2 class="fs-5 fw-bold mb-3">가입 시 로그인 페이지로 이동합니다.</h2>
                 
               </form>
             </div>
