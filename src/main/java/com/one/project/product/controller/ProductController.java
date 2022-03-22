@@ -64,7 +64,7 @@ public class ProductController {
 	@RequestMapping(value="/product/update", method=RequestMethod.POST)
 	public String update(ProductDto dto) {
 		service.update(dto);
-		return "product/updateList";
+		return "product/update";
 	}
 	
 	@RequestMapping("/product/pro_delete")
