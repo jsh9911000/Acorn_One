@@ -106,5 +106,12 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 
+	@Override
+	public void insert2(ProductDto dto, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }
 

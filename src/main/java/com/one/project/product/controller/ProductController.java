@@ -37,8 +37,15 @@ public class ProductController {
 
 		return new ModelAndView("product/upload");
 	}
-		//imagePath 구성 X -> dto 로 imagePath 를 받아서 DB 에 저장하기
+	//imagePath 구성 X -> dto 로 imagePath 를 받아서 DB 에 저장하기
+	@RequestMapping("/product/insert2")
+	public ModelAndView authInsert(ProductDto dto, HttpServletRequest request) {
+		//dto : caption, imagePath 가지고 있다.
+		//request : dto 에 writer(id) 추가
+		service.insert2(dto, request);
 
+		return new ModelAndView("product/upload");
+	}
 	
 	@RequestMapping("/product/updateList")
 	public String list(HttpServletRequest request) {
@@ -64,7 +71,7 @@ public class ProductController {
 	public String delete(int num,String pro_name) {
 		service.delete(num);
 		service.remove(pro_name);
-		return "redirect:/product/updateList.do";
+		return "redirect:/product/update.do";
 	}
 
 	@RequestMapping("/product/remove")

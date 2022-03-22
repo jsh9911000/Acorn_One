@@ -16,7 +16,7 @@ public interface ProductService {
 	public void update(ProductDto dto);//불러온 정보를 업데이트 하는 기능
 	public void delete(int num);
 	public List<ProductDto> getProductList();
-	
+	public void insert2(ProductDto dto, HttpServletRequest request);
 	public void remove(String pro_name);
 
 
