@@ -6,4 +6,6 @@ public interface GenderDao {
 	
 	public void plusMan(String p_name);
 	public void plusWoman(String p_name);
+	
+	public void duplicate(String p_name);
 }

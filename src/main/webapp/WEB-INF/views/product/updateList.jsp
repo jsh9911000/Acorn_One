@@ -29,7 +29,8 @@
 					<td>${tmp.pro_price }</td>
 					<td>${tmp.remain_stock }</td>
 					<td><a href="updateForm.do?num=${tmp.pro_num }">수정</a></td>
-					<td><a href="javascript:deleteConfirm(${tmp.pro_num })">삭제</a></td>				
+					<td><a href="javascript:deleteConfirm(${tmp.pro_num },'${tmp.pro_name }')">삭제</a></td>	
+							
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -37,12 +38,18 @@
 	<button onclick="location.href='${pageContext.request.contextPath}/home.do'">홈으로 가기</button>
 </div>
 <script>
-	function deleteConfirm(pro_num){
+	function deleteConfirm(pro_num,pro_name){
 		const isDelete=confirm("정말로 삭제하시겠습니까?");
 		if(isDelete){
-			location.href="pro_delete.do?num="+pro_num;	
+			
+			
+			location.href="pro_delete.do?num="+pro_num +"&pro_name="+pro_name;
+			
+			
 		}
-	}
+	}	
+	
+
 </script>
 </body>
 </html>

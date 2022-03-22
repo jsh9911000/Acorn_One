@@ -44,6 +44,16 @@ public class ProductDaoImpl implements ProductDao {
 	public void update(ProductDto dto) {
 		session.update("product.update", dto);
 	}
+	@Override
+	public void move (String pro_name) {
+		session.insert("product.move",pro_name);
+		
+	}
+	@Override
+	public void remove(String pro_name) {
+		session.delete("product.remove",pro_name);
+		
+	}
 
 	
 }
