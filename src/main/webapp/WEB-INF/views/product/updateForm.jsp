@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+
 <div class="modal-dialog" role="document">
 	<div class="modal-content rounded-5 shadow">
 		<div class="modal-header p-5 pb-4 border-bottom-0">
@@ -51,6 +52,7 @@
 		</form>
 		</div>
 	</div>
+
 </div>
 </body>
 </html>
