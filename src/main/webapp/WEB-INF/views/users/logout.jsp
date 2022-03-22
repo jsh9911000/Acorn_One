@@ -6,7 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그아웃</title>
+<style>
+        body {
+        	background-color: #212529;
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+</style>
 </head>
 <body>
   <script>

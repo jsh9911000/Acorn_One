@@ -4,7 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/views/member/sign.jsp</title>
+<title>회원가입</title>
+<style>
+        body {
+        	background-color: #212529;
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+</style>
 </head>
 <body>
    <script>
