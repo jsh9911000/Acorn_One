@@ -47,7 +47,7 @@ public class BasketsController {
 
 		
 		service.saveBasket(p_name,p_price,u_name,gender);
-		g_service.buy(request, mView, p_name);
+		//g_service.buy(request, mView, p_name);
 		mView.setViewName("/product/insert");
 		return "redirect:/product/list.do";
 	}
@@ -57,7 +57,7 @@ public class BasketsController {
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 		service.deleteBasket(b_num);
 		String p_name = (String)request.getParameter("p_name");
-		g_service.un_buy(request, mView, p_name);
+		//g_service.un_buy(request, mView, p_name);
 		mView.setViewName("/product/delete");
 		return "redirect:/product/list.do";
 	}

@@ -50,6 +50,19 @@
 	</select>
 
 
+
+
+	
+	<insert id="move" parameterType="String">
+		INSERT INTO reco (p_name,man,woman)
+		VALUES(#{pro_name}, 0,0)
+	</insert>
+	
+	<delete id="remove" parameterType="String">
+		DELETE FROM reco
+		WHERE p_name=#{pro_name}
+	</delete>
+
 </mapper>
 
 

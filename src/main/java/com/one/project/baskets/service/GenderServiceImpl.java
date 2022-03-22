@@ -25,6 +25,8 @@ public class GenderServiceImpl implements GenderService {
 			dao.plusWoman(p_name);
 		}
 		
+		dao.duplicate(p_name);
+		
 		
 		
 	}
@@ -40,7 +42,7 @@ public class GenderServiceImpl implements GenderService {
 			dao.minusWoman(p_name);
 		}
 		
-		
+		dao.duplicate(p_name);
 	}
 	
 	
