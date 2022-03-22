@@ -6,12 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.one.project.product.dto.ProductDto;
 import com.one.project.product.service.ProductService;
-@Controller	
+
+
+@Controller
 public class ProductController {
+
 	
 	@Autowired
 	private ProductService service;
@@ -41,4 +46,32 @@ public class ProductController {
 			
 			return new ModelAndView("product/upload");
 		}
+	
+	@RequestMapping("/product/updateList")
+	public String list(HttpServletRequest request) {
+		service.getList(request);
+		return "product/updateList";
+	}
+	
+	@RequestMapping("/product/updateForm")
+	public ModelAndView getData(int num, ModelAndView mView) {
+		service.getData(num, mView);
+		mView.setViewName("product/updateForm");
+		
+		return mView;
+	}
+	
+	@RequestMapping(value="/product/update", method=RequestMethod.POST)
+	public String update(ProductDto dto) {
+		service.update(dto);
+		return "product/updateList";
+	}
+	
+	@RequestMapping("/product/pro_delete")
+	public String delete(int num) {
+		service.delete(num);
+		
+		return "redirect:/product/updateList.do";
+	}
+
 }

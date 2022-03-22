@@ -15,7 +15,33 @@
 		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, #{remain_stock}, #{pro_cate}, #{imagePath})
 	</insert>
 
+
 	
+
+
+  
+	<select id="getList" parameterType="productDto" resultType="productDto">
+		SELECT pro_num, pro_name, pro_price, remain_stock
+		FROM products
+		ORDER BY pro_num ASC
+	</select>
+	
+	<update id="update" parameterType="productDto">
+		UPDATE PRODUCTS
+		SET pro_name=#{pro_name}, pro_price=#{pro_price}, remain_stock=#{remain_stock}
+		WHERE pro_num=#{pro_num}
+	</update>
+	
+	<select id="getData" parameterType="int" resultType="productDto">
+		SELECT pro_name, pro_price, remain_stock
+		FROM PRODUCTS
+		WHERE pro_num=#{pro_num}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM PRODUCTS
+		WHERE pro_num=#{pro_num}
+	</delete>
 
 
 	<select id="getProductList" resultType="com.one.project.product.dto.ProductDto">
@@ -23,4 +49,7 @@
 		ORDER BY pro_num
 	</select>
 
+
 </mapper>
+
+
