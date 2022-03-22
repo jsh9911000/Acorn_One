@@ -8,9 +8,9 @@
    <title>order</title>
 </head>
      <style>
-     	body{
-    	background-color: rgba(0,0,0,0.85);
-    	}
+        body {
+        	background-color: #212529;
+        }
         .btn-xl {
             padding: 40px 40px;
             font-size: 20px;
@@ -144,7 +144,7 @@
     <section id="content1">
     	<div class="card-group" style="overflow: auto; height: 600px;">
     		<c:forEach var="food" items="${foodlist }">
-    			<form action="insert.do" id="${food.pro_num }">
+				<form action="insert.do" id="${food.pro_num }">
    					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
 					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
 				</form>
@@ -164,75 +164,73 @@
 	</section>
 	
     <section id="content2">
-    <div class="card-group" style="overflow: auto; height: 600px;">
-          <c:forEach var="food" items="${foodlist }">
-          <c:if test="${food.pro_cate==1 }">
+	    <div class="card-group" style="overflow: auto; height: 600px;">
+	         <c:forEach var="food" items="${foodlist }">
+	          <c:if test="${food.pro_cate==1 }">
+				<form action="insert.do">
+					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+				</form>
 	    		<div class="col-lg-3">
-	                 <div class="card">
-					  <img src="${food.imagePath }" class="card-img-top" alt="...">
-					  <div class="card-body">
-				  		<form action="insert.do">
-							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-					  		<h5 class="card-title">${food.pro_name }</h5>
+					<div class="card">
+					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
+						<img src="${food.imagePath }" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">${food.pro_name }</h5>
 							<p class="card-text">${food.pro_price }</p>
-							<input type="submit" class="btn btn-primary" value="구매">
-						</form>
-					  </div>
+						</div>
+					</button>
 					</div>
 	             </div>
-	         </c:if>
-             </c:forEach>
-                
-     </div>
-         
+				</c:if>
+			</c:forEach>
+	     </div>
     </section>
     <section id="content3">
-    <div class="card-group" style="overflow: auto; height: 600px;">
-          <c:forEach var="food" items="${foodlist }">
-          <c:if test="${food.pro_cate==2 }">
-	    		<div class="col-lg-3" onclick="submit">
-	                 <div class="card">
-					  <img src="${food.imagePath }" class="card-img-top" alt="...">
-					  <div class="card-body">
-				  		<form action="insert.do">
-							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-					  		<h5 class="card-title">${food.pro_name }</h5>
+	    <div class="card-group" style="overflow: auto; height: 600px;">
+	         <c:forEach var="food" items="${foodlist }">
+	          <c:if test="${food.pro_cate==2 }">
+				<form action="insert.do">
+					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+				</form>
+	    		<div class="col-lg-3">
+					<div class="card">
+					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
+						<img src="${food.imagePath }" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">${food.pro_name }</h5>
 							<p class="card-text">${food.pro_price }</p>
-							<input type="submit" class="btn btn-primary" value="구매">
-						</form>
-					  </div>
+						</div>
+					</button>
 					</div>
 	             </div>
-	         </c:if>
-             </c:forEach>   
-             
-     </div>
-         
+				</c:if>
+			</c:forEach>
+	     </div>
     </section>
     <section id="content4">
-    <div class="card-group" style="overflow: auto; height: 600px;">
-           <c:forEach var="food" items="${foodlist }">
-           <c:if test="${food.pro_cate==3 }">
+	    <div class="card-group" style="overflow: auto; height: 600px;">
+	         <c:forEach var="food" items="${foodlist }">
+	          <c:if test="${food.pro_cate==3 }">
+				<form action="insert.do">
+					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+				</form>
 	    		<div class="col-lg-3">
-	                 <div class="card">
-					  <img src="${food.imagePath }" class="card-img-top" alt="...">
-					  <div class="card-body">
-				  		<form action="insert.do">
-							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-					  		<h5 class="card-title">${food.pro_name }</h5>
+					<div class="card">
+					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
+						<img src="${food.imagePath }" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">${food.pro_name }</h5>
 							<p class="card-text">${food.pro_price }</p>
-							<input type="submit" class="btn btn-primary" value="구매">
-						</form>
-					  </div>
+						</div>
+					</button>
 					</div>
 	             </div>
-	          </c:if>
-             </c:forEach>  
-     </div>
-         
+				</c:if>
+			</c:forEach>
+	     </div>
     </section>
 	</div>
              <div class="col-lg-4">
