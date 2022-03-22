@@ -26,10 +26,14 @@
 		WHERE p_name=#{p_name}
 	</update>
 	
-	<insert id="duplicate" parameterType="com.one.project.baskets.dto.GenderDto">
-		INSERT INTO products (man,woman)
-		SELECT man,woman FROM reco
-	</insert>
+	<update id="duplicate" parameterType="String">
+		UPDATE products p
+			SET man = (SELECT man FROM reco r
+				WHERE r.p_name = p.pro_name ),
+				woman = (SELECT woman FROM reco r
+				WHERE r.p_name = p.pro_name)
+
+	</update>
 	
 	
 </mapper>
