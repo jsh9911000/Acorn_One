@@ -57,7 +57,6 @@
 			</div>
 		</div>
 	</div>
->>>>>>> refs/remotes/upstream/master
 </div>
 <script>
 	function deleteConfirm(pro_num,pro_name){
