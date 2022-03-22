@@ -17,7 +17,7 @@
 <body>
 	<script>
 		alert("상품 등록에 성공했습니다.");
-		location.href = "${pageContext.request.contextPath}/product/list2.do";
+		location.href = "${pageContext.request.contextPath}/product/updateList.do";
 	</script>
 </body>
 </html>
