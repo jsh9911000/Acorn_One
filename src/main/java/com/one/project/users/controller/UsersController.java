@@ -32,9 +32,9 @@ public class UsersController {
 	}
 	
 	//회원 가입 요청 처리
-	@RequestMapping(value = "/signup_form", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/signup_form", method = RequestMethod.GET)
 	public String signupForm() {
-		return "signup_form";
+		return "users/signup_form";
 	}
 	
 	//아이디 중복 확인을 해서 json 문자열을 리턴해주는 메소드
