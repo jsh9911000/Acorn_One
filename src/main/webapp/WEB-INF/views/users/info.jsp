@@ -7,7 +7,19 @@
 <title>/views/users/info.jsp</title>
  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+        body {
+        	background-color: rgba(0,0,0,0.85);
+	        padding-top: 200px;
+	        padding-bottom: 40px;
+        }
+		.block {
+		    display: block;
+		    width: 100%;
+		}
+    </style>
 </head>
+
 <body>
 	<div class="modal-dialog" role="document">
     	<div class="modal-content rounded-5 shadow">
@@ -24,7 +36,7 @@
 		      </tr>
 		      <tr>
 		         <th>비밀번호</th>
-		         <td><a href="${pageContext.request.contextPath}/users/pwd_updateform.do">수정하기</a></td>
+		         <td><button type="button" class="btn btn-outline-warning" onclick="location.href='${pageContext.request.contextPath}/users/pwd_updateform.do'">수정하기</button></td>
 		      </tr>
 		       <tr>
 		         <th>가입일</th>
@@ -39,7 +51,7 @@
 		         <td>${dto.gender }</td>
 		      </tr>
 			  </table>
-			<button class="w-100 mb-2 btn btn-lg rounded-4 btn-danger" type="button" onclick="javascript:deleteConfirm()">탈퇴하기</button>
+			<button class="block btn btn-lg rounded-4 btn-danger" type="button" onclick="javascript:deleteConfirm()">탈퇴하기</button>
 			</div>
 		</div>
 	</div>

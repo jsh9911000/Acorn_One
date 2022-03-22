@@ -8,6 +8,9 @@
    <title>order</title>
 </head>
      <style>
+     	body{
+    	background-color: rgba(0,0,0,0.85);
+    	}
         .btn-xl {
             padding: 40px 40px;
             font-size: 20px;
@@ -33,21 +36,18 @@
             display: inline-block;
             padding: 15px 25px;
             font-weight: 600;
-            color: #bbb;
+            color: #ffffff;
             border: 1px solid transparent;
         }
  
         .b:hover {
-            color: #2e9cdf;
+            color: #ff7f00;
             cursor: pointer;
         }
  
         /*input 클릭시, label 스타일*/
         .a:checked + label {
-        	  color: #555;
-              border: 1px solid #ddd;
-              border-top: 2px solid;
-              border-bottom: 1px solid #ffffff;
+        	  color: #ff7f00;
         }
  
         #tab1:checked ~ #content1,
@@ -59,10 +59,10 @@
 
      </style>
      
-     <body>
+     <body class="text-white bg-dark">
     
     
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
        <div class="container-fluid">
        <a class="navbar-brand" href="${pageContext.request.contextPath}/home.do">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
@@ -89,7 +89,6 @@
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                		<c:choose>
                			<c:when test="${not empty sessionScope.id }">
-               				<li><strong>${sessionScope.id }님이 로그인 중입니다.</strong></li>
                  			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/info.do">회원정보 수정</a></li>
                  			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>               				
                			</c:when>
@@ -109,18 +108,19 @@
      	<h1>추천메뉴</h1>
 	    <div class="row">
     	<div class="card-group">
+    	<form action="" id="">
+   					<input type="hidden" name="p_name" value="" readonly="readonly">
+					<input type="hidden" name="p_price" value="" readonly="readonly">
+				</form>
             <div class="col-lg-2">
             <div class="card">
-			  <img src="../food/zza.PNG" class="card-img-top" alt="...">
-			  <div class="card-body">
-			  		<form action="insert.do">
-					<input type="hidden" name="p_name" value="짜파게티" readonly="readonly">
-					<input type="hidden" name="p_price" value="3000" readonly="readonly">
-			  		<h5 class="card-title">짜파게티</h5>
-					<p class="card-text">3,000원</p>
-					<input type="submit" class="btn btn-primary" value="구매">
-					</form>
-			  </div>
+			            <button type="submit" class="btn btn-dark" form="">
+						  <img src="../food/낙지덮밥.jpg" class="card-img-top" alt="...">
+			  			<div class="card-body">
+				  			<h4 class="card-title">낙지덮밥</h4>
+							<p class="card-text">1000 원</p>
+						</div>
+						</button>
 			</div>
             </div>
     	</div>
@@ -144,20 +144,21 @@
     <section id="content1">
     	<div class="card-group" style="overflow: auto; height: 600px;">
     		<c:forEach var="food" items="${foodlist }">
-	    		<div class="col-lg-2">
-	                 <div class="card">
-					  <img src="${food.imagePath }" class="card-img-top" alt="...">
-					  <div class="card-body">
-				  		<form action="insert.do">
-							<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-							<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-					  		<h5 class="card-title">${food.pro_name }</h5>
-							<p class="card-text">${food.pro_price }</p>
-							<input type="submit" class="btn btn-primary" value="구매">
-						</form>
-					  </div>
-					</div>
-	             </div>
+    			<form action="insert.do" id="${food.pro_num }">
+   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+				</form>
+	    		<div class="col-lg-3">
+	              <div class="card">
+	                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+					  	<img src="${food.imagePath }" class="card-img-top" alt="...">
+					  	<div class="card-body">
+				  			<h4 class="card-title">${food.pro_name }</h4>
+							<p class="card-text">${food.pro_price } 원</p>
+					    </div>
+					</button>
+				  </div>
+	            </div>
              </c:forEach>
           </div>	
 	</section>
@@ -166,7 +167,7 @@
     <div class="card-group" style="overflow: auto; height: 600px;">
           <c:forEach var="food" items="${foodlist }">
           <c:if test="${food.pro_cate==1 }">
-	    		<div class="col-lg-2">
+	    		<div class="col-lg-3">
 	                 <div class="card">
 					  <img src="${food.imagePath }" class="card-img-top" alt="...">
 					  <div class="card-body">
@@ -190,7 +191,7 @@
     <div class="card-group" style="overflow: auto; height: 600px;">
           <c:forEach var="food" items="${foodlist }">
           <c:if test="${food.pro_cate==2 }">
-	    		<div class="col-lg-2">
+	    		<div class="col-lg-3" onclick="submit">
 	                 <div class="card">
 					  <img src="${food.imagePath }" class="card-img-top" alt="...">
 					  <div class="card-body">
@@ -214,7 +215,7 @@
     <div class="card-group" style="overflow: auto; height: 600px;">
            <c:forEach var="food" items="${foodlist }">
            <c:if test="${food.pro_cate==3 }">
-	    		<div class="col-lg-2">
+	    		<div class="col-lg-3">
 	                 <div class="card">
 					  <img src="${food.imagePath }" class="card-img-top" alt="...">
 					  <div class="card-body">
@@ -238,7 +239,7 @@
                  <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h3>
                  <div class="row" style="overflow: auto; height: 300px;">
                 
-					<table class="table table-hover">
+					<table class="table table-dark">
 						<thead>
 							<tr>
 								<th>음식</th>
@@ -249,7 +250,7 @@
 						<tbody>
 						<c:set var="total" value="0"/>
 						<c:forEach var="tmp" items="${list }">
-							<tr>
+							<tr class="table-dark">
 								
 								<td>${tmp.p_name }</td>
 								<td>${tmp.p_price }</td>
@@ -257,7 +258,7 @@
 									<form action="delete.do">
 										<input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly">
 										<input type="hidden" name="p_name" value="${tmp.p_name }" readonly="readonly">
-										<input type="submit" value="삭제">
+										<button class="btn btn-secondary" type="submit">삭제</button>
 									</form> 
 								</td>
 							</tr>
@@ -278,7 +279,7 @@
 				  <label class="custom-control-label" for="customRadio2">카드</label>
 				</div></div>
 				<div class="col-6">
-	          	<button type="button" class="btn btn-primary btn-xl" onclick="javascript:payConfirm()">결제</button>  
+	          	<button type="button" class="btn btn-warning btn-xl" onclick="javascript:payConfirm()">결제</button>  
 	          	</div> 
 	          </div>
 	       </div>    
