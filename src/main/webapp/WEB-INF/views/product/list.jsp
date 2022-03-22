@@ -56,14 +56,28 @@
         #tab4:checked ~ #content4 {
             display: block;
        }
-
+       .inline-block {
+	  display: inline-block;
+	  padding: .6rem;
+	}
+       .fixed {
+		  position: fixed;
+		  bottom: 0px;
+		  right: 0px;
+		}
+		.sticky {
+		  position: -webkit-sticky;
+		  position: sticky;
+		  top: 0;
+		  z-index:1;
+		}
      </style>
      
      <body class="text-white bg-dark">
     
     
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-       <div class="container-fluid">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky">
+       <div class=" container-fluid">
        <a class="navbar-brand" href="${pageContext.request.contextPath}/home.do">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
                      <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -142,7 +156,7 @@
 		    <label for="tab4" class="b">음료</label>
 		    
     <section id="content1">
-    	<div class="card-group" style="overflow: auto; height: 600px;">
+    	<div class="card-group">
     		<c:forEach var="food" items="${foodlist }">
 				<form action="insert.do" id="${food.pro_num }">
    					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
@@ -164,7 +178,7 @@
 	</section>
 	
     <section id="content2">
-	    <div class="card-group" style="overflow: auto; height: 600px;">
+	    <div class="card-group">
 	         <c:forEach var="food" items="${foodlist }">
 	          <c:if test="${food.pro_cate==1 }">
 				<form action="insert.do">
@@ -187,7 +201,7 @@
 	     </div>
     </section>
     <section id="content3">
-	    <div class="card-group" style="overflow: auto; height: 600px;">
+	    <div class="card-group">
 	         <c:forEach var="food" items="${foodlist }">
 	          <c:if test="${food.pro_cate==2 }">
 				<form action="insert.do">
@@ -210,7 +224,7 @@
 	     </div>
     </section>
     <section id="content4">
-	    <div class="card-group" style="overflow: auto; height: 600px;">
+	    <div class="card-group">
 	         <c:forEach var="food" items="${foodlist }">
 	          <c:if test="${food.pro_cate==3 }">
 				<form action="insert.do">
@@ -233,7 +247,7 @@
 	     </div>
     </section>
 	</div>
-             <div class="col-lg-4">
+             <div class="col-lg-4 inline-block fixed" >
                  <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h3>
                  <div class="row" style="overflow: auto; height: 300px;">
                 
