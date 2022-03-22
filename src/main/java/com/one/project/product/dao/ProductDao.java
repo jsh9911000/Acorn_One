@@ -6,6 +6,8 @@ import com.one.project.product.dto.ProductDto;
 
 public interface ProductDao {
 
+	public List<ProductDto> getProductList();
+	
 	public void insert2(ProductDto dto);
 	//상품 목록을 리턴해주는 메소드
 	public List<ProductDto> getList(ProductDto dto);

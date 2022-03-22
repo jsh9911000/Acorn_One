@@ -8,7 +8,7 @@
 		(pro_num, pro_name, pro_price, remain_stock, pro_cate, imagepath)
 		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, #{remain_stock}, #{pro_cate}, #{imagePath})
 	</insert>
-	
+  
 	<select id="getList" parameterType="productDto" resultType="productDto">
 		SELECT pro_num, pro_name, pro_price, remain_stock
 		FROM products
@@ -32,4 +32,8 @@
 		WHERE pro_num=#{pro_num}
 	</delete>
 
+	<select id="getProductList" resultType="com.one.project.product.dto.ProductDto">
+		SELECT * FROM PRODUCTS
+		ORDER BY pro_num
+	</select>
 </mapper>
