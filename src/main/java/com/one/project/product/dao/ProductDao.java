@@ -15,5 +15,7 @@ public interface ProductDao {
 	public ProductDto getData(int num);
 	public void delete(int num);
 	public void update(ProductDto dto);
+	public void move(String pro_name);
+	public void remove(String pro_name);
 
 }

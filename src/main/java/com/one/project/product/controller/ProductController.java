@@ -18,6 +18,8 @@ import com.one.project.product.service.ProductService;
 public class ProductController {
 
 	
+
+	
 	@Autowired
 	private ProductService service;
 	
@@ -68,10 +70,18 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/product/pro_delete")
-	public String delete(int num) {
+	public String delete(int num,String pro_name) {
 		service.delete(num);
+		service.remove(pro_name);
 		
 		return "redirect:/product/updateList.do";
 	}
+	@RequestMapping("/product/remove")
+	
+	public void remove(String pro_name) {
+		
+		service.remove(pro_name);
+		//return "redirect:/product/pro_delete.do";
+			}
 
 }

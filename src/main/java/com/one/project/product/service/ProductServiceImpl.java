@@ -55,22 +55,12 @@ public class ProductServiceImpl implements ProductService{
 		
 		//ProductDao 를 이용해서 DB 에 저장하기
 		dao.insert2(dto);
+		String pro_name = dto.getPro_name();
+		dao.move(pro_name);
+		
 	}
 		
 
-	
-
-	
-	@Override
-	public void insert2(ProductDto dto, HttpServletRequest request) {
-		//dto : caption, imagePath 가지고 있다.
-		//dto 에 Pro_name(id) 추가
-		dto.setPro_name((String)request.getSession().getAttribute("pro_name"));
-		
-		//ProductDao 를 이용해서 DB 에 저장하기
-		dao.insert2(dto);
-		
-	}
 	@Override
 	public List<ProductDto> getProductList() {
 		return dao.getProductList();
@@ -86,6 +76,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void delete(int num) {
+
 		dao.delete(num);
 		
 	}
@@ -107,6 +98,19 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
+
+	@Override
+	public void remove(String pro_name) {
+		dao.remove(pro_name);
+		
+	}
+
+
+	@Override
+	public void insert2(ProductDto dto, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }

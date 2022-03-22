@@ -56,9 +56,9 @@
 			            </div>
 			
 
+
 			            <button style="float:left" class="w-50 btn btn-lg btn-secondary" type="button" onclick="location.href='${pageContext.request.contextPath}/users/signup_form.do'">회원가입</button>
 			            <button style="float:left" class="w-50 btn btn-lg btn-warning" type="submit">로그인</button>
-
 		
 		            </form>
 				</div>
