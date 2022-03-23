@@ -18,6 +18,8 @@ public interface ProductService {
 	public List<ProductDto> getProductList();
 	public void insert2(ProductDto dto, HttpServletRequest request);
 	public void remove(String pro_name);
+	public List<ProductDto> recoList_Man();
+	public List<ProductDto> recoList_Woman();
 
 
 }

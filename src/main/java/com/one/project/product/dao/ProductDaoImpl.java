@@ -54,6 +54,17 @@ public class ProductDaoImpl implements ProductDao {
 		session.delete("product.remove",pro_name);
 		
 	}
+	
+	@Override
+	public List<ProductDto> getRecoList_Man() {
+		List<ProductDto> list=session.selectList("product.getRecoList_man");
+		return list;
+	}
+	@Override
+	public List<ProductDto> getRecoList_Woman() {
+		List<ProductDto> list=session.selectList("product.getRecoList_woman");
+		return list;
+	}
 
 	
 }

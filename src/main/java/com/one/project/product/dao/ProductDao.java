@@ -18,4 +18,8 @@ public interface ProductDao {
 	public void move(String pro_name);
 	public void remove(String pro_name);
 
+	public List<ProductDto> getRecoList_Man();
+
+	public List<ProductDto> getRecoList_Woman();
+
 }
