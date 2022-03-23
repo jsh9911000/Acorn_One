@@ -9,20 +9,19 @@
 </head>
      <style>
         body {
-        	background-color: #212529;
+           background-color: #212529;
         }
         .btn-xl {
-            padding: 40px 40px;
+             padding: 15px 25px;
             font-size: 20px;
             border-radius: 10px;
-            width:50%;
         }
         .card{
             margin-top: 5px;
             margin-right: 5px;
         }
         p{
-        	display: inline-block;
+           display: inline-block;
         }
         
         section {
@@ -47,7 +46,7 @@
  
         /*input 클릭시, label 스타일*/
         .a:checked + label {
-        	  color: #ff7f00;
+             color: #ff7f00;
         }
  
         #tab1:checked ~ #content1,
@@ -57,34 +56,16 @@
             display: block;
        }
        .inline-block {
-	  display: inline-block;
-	  padding: .6rem;
-	}
-       .fixed {
-		  position: fixed;
-		  bottom: 0px;
-		  right: 0px;
-		}
-		@media (max-width: 900px) {
-        .fixed {
-        position: static;
-        bottom: 0px;
-        right: 0px;
-        z-index:0;
-        }
-      }
-		.sticky {
-		  position: -webkit-sticky;
-		  position: sticky;
-		  top: 0;
-		  z-index:1;
-		}
+     display: inline-block;
+     padding: .6rem;
+   }
+   
      </style>
      
      <body class="text-white bg-dark">
     
     
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
        <div class=" container-fluid">
        <a class="navbar-brand" href="${pageContext.request.contextPath}/home.do">
        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-egg-fried" viewBox="0 0 16 16">
@@ -99,26 +80,26 @@
            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               			<c:choose>
-               				<c:when test="${not empty sessionScope.id }">
-               					<strong>${sessionScope.id }</strong>님이 로그인 중입니다.
-               				</c:when>
-               				<c:otherwise>
-               					<strong>로그인이 필요합니다</strong>
-               				</c:otherwise>
-               			</c:choose>
+                        <c:choose>
+                           <c:when test="${not empty sessionScope.id }">
+                              <strong>${sessionScope.id }</strong>님이 로그인 중입니다.
+                           </c:when>
+                           <c:otherwise>
+                              <strong>로그인이 필요합니다</strong>
+                           </c:otherwise>
+                        </c:choose>
                </a>
                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-               		<c:choose>
-               			<c:when test="${not empty sessionScope.id }">
-                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/info.do">회원정보 수정</a></li>
-                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>               				
-               			</c:when>
-               			<c:otherwise>
-                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/signup_form.do">회원가입</a></li>
-                 			<li><a class="dropdown-item" href="${pageContext.request.contextPath}/home.do">로그인</a></li>                 		
-               			</c:otherwise>
-               		</c:choose>
+                     <c:choose>
+                        <c:when test="${not empty sessionScope.id }">
+                          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/info.do">회원정보 수정</a></li>
+                          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></li>                           
+                        </c:when>
+                        <c:otherwise>
+                          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/signup_form.do">회원가입</a></li>
+                          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/home.do">로그인</a></li>                       
+                        </c:otherwise>
+                     </c:choose>
                </ul>
              </li>
            </ul>
@@ -128,218 +109,219 @@
      
      <div class="container">
                  <h3 class="h3 mb-3 fw-normal"><strong>추천 리스트</strong></h3>
-               			<c:choose>
-               				<c:when test="${sessionScope.gender eq 'man'}">
-               		    	<div class="card-group">
-					    		<c:forEach var="food" items="${recolist_Man }" begin="0" end="3">
-									<form action="insert.do" id="${food.pro_num }">
-					   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-										<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-									</form>
-						    		<div class="col-lg-3">
-						              <div class="card">
-						                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
-										  	<img src="${food.imagePath }" class="card-img-top" alt="...">
-										  	<div class="card-body">
-									  			<h4 class="card-title">${food.pro_name }</h4>
-												<p class="card-text">${food.pro_price } 원</p>
-										    </div>
-										</button>
-									  </div>
-						            </div>
-					             </c:forEach>
-					               					
-               				</c:when>
-               				<c:otherwise>
-								<div class="card-group">
-					    		<c:forEach var="food" items="${rocolist_Woman }" begin="0" end="3">
-									<form action="insert.do" id="${food.pro_num }">
-					   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-										<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-									</form>
-						    		<div class="col-lg-3">
-						              <div class="card">
-						                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
-										  	<img src="${food.imagePath }" class="card-img-top" alt="...">
-										  	<div class="card-body">
-									  			<h4 class="card-title">${food.pro_name }</h4>
-												<p class="card-text">${food.pro_price } 원</p>
-										    </div>
-										</button>
-									  </div>
-						            </div>
-					             </c:forEach>				
-               				</c:otherwise>
-               			</c:choose>
-     </div>
+                        <c:choose>
+                           <c:when test="${sessionScope.gender eq 'man'}">
+                            <div class="card-group">
+                         <c:forEach var="food" items="${recolist_Man }" begin="0" end="3">
+                           <form action="insert.do" id="${food.pro_num }">
+                                 <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+                              <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+                           </form>
+                            <div class="col-lg-3">
+                                <div class="card">
+                                   <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                                   <img src="${food.imagePath }" class="card-img-top" alt="...">
+                                   <div class="card-body">
+                                      <h4 class="card-title">${food.pro_name }</h4>
+                                    <p class="card-text">${food.pro_price } 원</p>
+                                  </div>
+                              </button>
+                             </div>
+                              </div>
+                            </c:forEach>
+                           </div>                  
+                           </c:when>
+                           <c:otherwise>
+                        <div class="card-group">
+                         <c:forEach var="food" items="${rocolist_Woman }" begin="0" end="3">
+                           <form action="insert.do" id="${food.pro_num }">
+                                 <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+                              <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+                           </form>
+                            <div class="col-lg-3">
+                                <div class="card">
+                                   <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                                   <img src="${food.imagePath }" class="card-img-top" alt="...">
+                                   <div class="card-body">
+                                      <h4 class="card-title">${food.pro_name }</h4>
+                                    <p class="card-text">${food.pro_price } 원</p>
+                                  </div>
+                              </button>
+                             </div>
+                              </div>
+                            </c:forEach>
+                            </div>             
+                           </c:otherwise>
+                        </c:choose>
+     
      
      <div class="row">
      <div class="col-lg-8">
-     		<input id="tab1" class="a" type="radio" name="tabs" checked> 
-		    <label for="tab1" class="b">전체메뉴</label>
-		 
-		    <input id="tab2" class="a" type="radio" name="tabs">
-		    <label for="tab2" class="b">분식</label>
-			
-			<input id="tab3" class="a" type="radio" name="tabs">
-		    <label for="tab3" class="b">식사</label>
-		    
-		    <input id="tab4" class="a" type="radio" name="tabs">
-		    <label for="tab4" class="b">음료</label>
-		    
-    <section id="content1">
-    	<div class="card-group">
-    		<c:forEach var="food" items="${foodlist }">
-				<form action="insert.do" id="${food.pro_num }">
-   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-				</form>
-	    		<div class="col-lg-3">
-	              <div class="card">
-	                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
-					  	<img src="${food.imagePath }" class="card-img-top" alt="...">
-					  	<div class="card-body">
-				  			<h4 class="card-title">${food.pro_name }</h4>
-							<p class="card-text">${food.pro_price } 원</p>
-					    </div>
-					</button>
-				  </div>
-	            </div>
+           <input id="tab1" class="a" type="radio" name="tabs" checked> 
+          <label for="tab1" class="b">전체메뉴</label>
+       
+          <input id="tab2" class="a" type="radio" name="tabs">
+          <label for="tab2" class="b">분식</label>
+         
+         <input id="tab3" class="a" type="radio" name="tabs">
+          <label for="tab3" class="b">식사</label>
+          
+          <input id="tab4" class="a" type="radio" name="tabs">
+          <label for="tab4" class="b">음료</label>
+          
+    <section id="content1" style="overflow: auto; height: 550px;">
+       <div class="card-group">
+          <c:forEach var="food" items="${foodlist }">
+            <form action="insert.do" id="${food.pro_num }">
+                  <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+               <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+            </form>
+             <div class="col-lg-3">
+                 <div class="card">
+                    <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                    <img src="${food.imagePath }" class="card-img-top" alt="...">
+                    <div class="card-body">
+                       <h6 class="card-title">${food.pro_name }</h6>
+                     <p class="card-text">${food.pro_price } 원</p>
+                   </div>
+               </button>
+              </div>
+               </div>
              </c:forEach>
-          </div>	
-	</section>
-	
-    <section id="content2">
-	    <div class="card-group">
-	         <c:forEach var="food" items="${foodlist }">
-	          <c:if test="${food.pro_cate==1 }">
-				<form action="insert.do">
-					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-				</form>
-	    		<div class="col-lg-3">
-					<div class="card">
-					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
-						<img src="${food.imagePath }" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">${food.pro_name }</h5>
-							<p class="card-text">${food.pro_price }</p>
-						</div>
-					</button>
-					</div>
-	             </div>
-				</c:if>
-			</c:forEach>
-	     </div>
+          </div>   
+   </section>
+   
+    <section id="content2" style="overflow: auto; height: 550px;">
+       <div class="card-group">
+            <c:forEach var="food" items="${foodlist }">
+             <c:if test="${food.pro_cate==1 }">
+            <form action="insert.do">
+               <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+               <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+            </form>
+             <div class="col-lg-3">
+               <div class="card">
+               <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                  <img src="${food.imagePath }" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h6 class="card-title">${food.pro_name }</h6>
+                     <p class="card-text">${food.pro_price } 원</p>
+                  </div>
+               </button>
+               </div>
+                </div>
+            </c:if>
+         </c:forEach>
+        </div>
     </section>
-    <section id="content3">
-	    <div class="card-group">
-	         <c:forEach var="food" items="${foodlist }">
-	          <c:if test="${food.pro_cate==2 }">
-				<form action="insert.do">
-					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-				</form>
-	    		<div class="col-lg-3">
-					<div class="card">
-					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
-						<img src="${food.imagePath }" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">${food.pro_name }</h5>
-							<p class="card-text">${food.pro_price }</p>
-						</div>
-					</button>
-					</div>
-	             </div>
-				</c:if>
-			</c:forEach>
-	     </div>
+    <section id="content3" style="overflow: auto; height: 550px;">
+       <div class="card-group">
+            <c:forEach var="food" items="${foodlist }">
+             <c:if test="${food.pro_cate==2 }">
+            <form action="insert.do">
+               <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+               <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+            </form>
+             <div class="col-lg-3">
+               <div class="card">
+               <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                  <img src="${food.imagePath }" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h6 class="card-title">${food.pro_name }</h6>
+                     <p class="card-text">${food.pro_price } 원</p>
+                  </div>
+               </button>
+               </div>
+                </div>
+            </c:if>
+         </c:forEach>
+        </div>
     </section>
-    <section id="content4">
-	    <div class="card-group">
-	         <c:forEach var="food" items="${foodlist }">
-	          <c:if test="${food.pro_cate==3 }">
-				<form action="insert.do">
-					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
-					<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
-				</form>
-	    		<div class="col-lg-3">
-					<div class="card">
-					<button type="submit" class="btn btn-dark" form="${food.pro_num }">
-						<img src="${food.imagePath }" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">${food.pro_name }</h5>
-							<p class="card-text">${food.pro_price }</p>
-						</div>
-					</button>
-					</div>
-	             </div>
-				</c:if>
-			</c:forEach>
-	     </div>
+    <section id="content4" style="overflow: auto; height: 550px;">
+       <div class="card-group" style="overflow: auto; height: 400px;">
+            <c:forEach var="food" items="${foodlist }">
+             <c:if test="${food.pro_cate==3 }">
+            <form action="insert.do">
+               <input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+               <input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+            </form>
+             <div class="col-lg-3">
+               <div class="card">
+               <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+                  <img src="${food.imagePath }" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <h6 class="card-title">${food.pro_name }</h6>
+                     <p class="card-text">${food.pro_price }</p>
+                  </div>
+               </button>
+               </div>
+                </div>
+            </c:if>
+         </c:forEach>
+        </div>
     </section>
-	</div>
-             <div class="col-lg-4 inline-block fixed" >
-                 <h3 class="h3 mb-3 fw-normal"><strong>주문 리스트</strong></h3>
+   </div>
+             <div class="col-lg-4" >
+                 <h3 class="h3 mb-3 fw-normal"style="margin-top: 15%;"><strong>주문 리스트</strong></h3>
                  <div class="row" style="overflow: auto; height: 300px;">
                 
-					<table class="table table-dark">
-						<thead>
-							<tr>
-								<th>음식</th>
-								<th>가격</th>
-								<th>삭제</th>
-							</tr>
-						</thead>
-						<tbody>
-						<c:set var="total" value="0"/>
-						<c:forEach var="tmp" items="${list }">
-							<tr class="table-dark">
-								
-								<td>${tmp.p_name }</td>
-								<td>${tmp.p_price }</td>
-								<td>
-									<form action="delete.do">
-										<input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly">
-										<input type="hidden" name="p_name" value="${tmp.p_name }" readonly="readonly">
-										<button class="btn btn-secondary" type="submit">삭제</button>
-									</form> 
-								</td>
-							</tr>
-							<c:set var="total" value="${total +tmp.p_price}"/>
-						</c:forEach>
-						</tbody>
-		
-					</table>
+               <table class="table table-dark">
+                  <thead>
+                     <tr>
+                        <th>음식</th>
+                        <th>가격</th>
+                        <th>삭제</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <c:set var="total" value="0"/>
+                  <c:forEach var="tmp" items="${list }">
+                     <tr class="table-dark">
+                        
+                        <td>${tmp.p_name }</td>
+                        <td>${tmp.p_price }</td>
+                        <td>
+                           <form action="delete.do">
+                              <input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly">
+                              <input type="hidden" name="p_name" value="${tmp.p_name }" readonly="readonly">
+                              <button class="btn btn-secondary" type="submit">삭제</button>
+                           </form> 
+                        </td>
+                     </tr>
+                     <c:set var="total" value="${total +tmp.p_price}"/>
+                  </c:forEach>
+                  </tbody>
+      
+               </table>
                  </div>
                  <h3><c:out value="총금액 : ${total }원"/></h3>
                 <div class="row"><div class="col-6">
-	            <div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-				  <label class="custom-control-label" for="customRadio1">현금</label>
-				</div>
-				<div class="custom-control custom-radio">
-				  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-				  <label class="custom-control-label" for="customRadio2">카드</label>
-				</div></div>
-				<div class="col-6">
-	          	<button type="button" class="btn btn-warning btn-xl" onclick="javascript:payConfirm()">결제</button>  
-	          	</div> 
-	          </div>
-	       </div>    
-	</div>
+               <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadio1">현금</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio2">카드</label>
+            </div></div>
+            <div class="col-6">
+                <button type="button" class="btn btn-warning btn-xl" onclick="javascript:payConfirm()">결제</button>  
+                </div> 
+             </div>
+          </div>    
+   </div></div>
         <script>
-			function payConfirm(){
-				const isDelete=confirm("결제 하시겠습니까?");
-				if(isDelete){
-					location.href="${pageContext.request.contextPath}/product/move.do";
-					alert("결제되었습니다");
-					//location.href="${pageContext.request.contextPath}/product/pay.do";
-				}else{
-					alert("결제가 취소되었습니다");
-				}
-			}
-			
-		</script> 
+         function payConfirm(){
+            const isDelete=confirm("결제 하시겠습니까?");
+            if(isDelete){
+               location.href="${pageContext.request.contextPath}/product/move.do";
+               alert("결제되었습니다");
+               //location.href="${pageContext.request.contextPath}/product/pay.do";
+            }else{
+               alert("결제가 취소되었습니다");
+            }
+         }
+         
+      </script> 
      </body>
      </html>
