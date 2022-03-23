@@ -3,27 +3,27 @@
 <mapper namespace="gender">
 
 	<update id="plusman" parameterType="String">
-		UPDATE reco
+		UPDATE products
 		SET man=man+1
-		WHERE p_name=#{p_name}
+		WHERE pro_name=#{p_name}
 	</update>
 	
 	<update id="minusman" parameterType="String">
-		UPDATE reco
+		UPDATE products
 		SET man=man-1
-		WHERE p_name=#{p_name}
+		WHERE pro_name=#{p_name}
 	</update>
 	
 	<update id="minuswoman" parameterType="String">
-		UPDATE reco
+		UPDATE products
 		SET woman=woman-1
-		WHERE p_name=#{p_name}
+		WHERE pro_name=#{p_name}
 	</update>
 	
 	<update id="pluswoman" parameterType="String">
-		UPDATE reco
+		UPDATE products
 		SET woman=woman+1
-		WHERE p_name=#{p_name}
+		WHERE pro_name=#{p_name}
 	</update>
 	
 	<update id="duplicate" parameterType="String">
