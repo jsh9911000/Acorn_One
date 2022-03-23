@@ -2,12 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="product">
+<insert id="insert" parameterType="productDto">
+        INSERT INTO PRODUCTS
+        (pro_num, pro_name, pro_price, man_sell, woman_sell, remain_stock, imagepath)
+        VALUES(products_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0, #{remain_stock} #{imagePath})
+    </insert>
+
 
 	<insert id="insert2" parameterType="productDto">
 		INSERT INTO PRODUCTS
 		(pro_num, pro_name, pro_price, remain_stock, pro_cate, imagepath)
 		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, #{remain_stock}, #{pro_cate}, #{imagePath})
 	</insert>
+
+
+	
+
+
   
 	<select id="getList" parameterType="productDto" resultType="productDto">
 		SELECT pro_num, pro_name, pro_price, remain_stock
@@ -32,10 +43,15 @@
 		WHERE pro_num=#{pro_num}
 	</delete>
 
+
 	<select id="getProductList" resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY pro_num
 	</select>
+
+
+
+
 	
 	<insert id="move" parameterType="String">
 		INSERT INTO reco (p_name,man,woman)
@@ -46,4 +62,7 @@
 		DELETE FROM reco
 		WHERE p_name=#{pro_name}
 	</delete>
+
 </mapper>
+
+

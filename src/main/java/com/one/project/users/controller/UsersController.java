@@ -107,5 +107,16 @@ public class UsersController {
 	      mView.setViewName("users/pwd_update");
 	      return mView;
 	}
+	
+	   //회원 탈퇴 요청 처리
+	      @RequestMapping("/users/delete")
+	      public ModelAndView authDelete(HttpSession session, ModelAndView mView,
+	             HttpServletRequest request) {
+	         
+	         service.deleteUser(session, mView);
+	         
+	         mView.setViewName("users/delete");
+	         return mView;
+	      }
 
 }
