@@ -18,12 +18,12 @@ public class MasterController {
 	public ModelAndView list(ModelAndView mView) {
 
 		service.getListMember(mView);
-		
+
 		mView.setViewName("product/list2");
-		//4. ModelAndView 객체를 리턴해 준다.
+		// 4. ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
-	
+
 	@RequestMapping("/product/delete2")
 	public String delete(HttpServletRequest request) {
 
@@ -32,11 +32,12 @@ public class MasterController {
 
 		return "redirect:/product/list2.do";
 	}
+
 	@RequestMapping("/product/clear")
 	public String pay(HttpServletRequest request) {
-		
+
 		service.clear();
 		return "redirect:/product/list2.do";
 	}
-	
+
 }

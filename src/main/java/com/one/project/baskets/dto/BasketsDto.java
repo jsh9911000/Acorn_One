@@ -2,7 +2,6 @@ package com.one.project.baskets.dto;
 
 public class BasketsDto {
 
-	
 	private int p_num;
 	private String p_name;
 	private int p_price;
@@ -10,7 +9,8 @@ public class BasketsDto {
 	private String u_name;
 	private String gender;
 
-	public BasketsDto() {}
+	public BasketsDto() {
+	}
 
 	public BasketsDto(int p_num, String p_name, int p_price, int b_num, String u_name, String gender) {
 		super();
@@ -69,6 +69,5 @@ public class BasketsDto {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 
 }

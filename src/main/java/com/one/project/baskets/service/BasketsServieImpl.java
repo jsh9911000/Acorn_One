@@ -11,22 +11,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.one.project.baskets.dao.BasketsDao;
 import com.one.project.baskets.dto.BasketsDto;
+
 @Service
-public class BasketsServieImpl implements BasketsService{
-	@Autowired 
+public class BasketsServieImpl implements BasketsService {
+	@Autowired
 	private BasketsDao dao;
 
-	
 	@Override
 	public void getListMember(ModelAndView mView) {
 		List<BasketsDto> list = dao.getList();
-		mView.addObject("list",list);
+		mView.addObject("list", list);
 	}
 
-
 	@Override
-	public void saveBasket(String p_name,int p_price,String u_name,String gender) {
-		//String u_name=(String)request.getSession().getAttribute("id");
+	public void saveBasket(String p_name, int p_price, String u_name, String gender) {
+		// String u_name=(String)request.getSession().getAttribute("id");
 		BasketsDto dto = new BasketsDto();
 		dto.setP_name(p_name);
 		dto.setP_price(p_price);
@@ -35,7 +34,6 @@ public class BasketsServieImpl implements BasketsService{
 		dao.insert(dto);
 	}
 
-
 	@Override
 	public void deleteBasket(int b_num) {
 		BasketsDto dto = new BasketsDto();
@@ -43,18 +41,16 @@ public class BasketsServieImpl implements BasketsService{
 		dao.delete(dto);
 	}
 
-
 	@Override
 	public void payBasket() {
 		dao.pay();
-		
-	}
 
+	}
 
 	@Override
 	public void moveBasket() {
 		dao.move();
-		
+
 	}
 
 }

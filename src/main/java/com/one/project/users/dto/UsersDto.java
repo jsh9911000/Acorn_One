@@ -8,8 +8,9 @@ public class UsersDto {
 	private String regdate;
 	private String name;
 	private String gender;
-	
-	public UsersDto() {}
+
+	public UsersDto() {
+	}
 
 	public UsersDto(String id, String pwd, String email, String newPwd, String regdate, String name, String gender) {
 		super();
@@ -78,5 +79,4 @@ public class UsersDto {
 		this.gender = gender;
 	}
 
-	
 }

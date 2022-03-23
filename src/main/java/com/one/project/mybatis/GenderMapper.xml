@@ -7,33 +7,37 @@
 		SET man=man+1
 		WHERE pro_name=#{p_name}
 	</update>
-	
+
 	<update id="minusman" parameterType="String">
 		UPDATE products
 		SET man=man-1
 		WHERE pro_name=#{p_name}
 	</update>
-	
+
 	<update id="minuswoman" parameterType="String">
 		UPDATE products
-		SET woman=woman-1
+		SET
+		woman=woman-1
 		WHERE pro_name=#{p_name}
 	</update>
-	
+
 	<update id="pluswoman" parameterType="String">
 		UPDATE products
-		SET woman=woman+1
+		SET
+		woman=woman+1
 		WHERE pro_name=#{p_name}
 	</update>
-	
+
 	<update id="duplicate" parameterType="String">
 		UPDATE products p
-			SET man = (SELECT man FROM reco r
-				WHERE r.p_name = p.pro_name ),
-				woman = (SELECT woman FROM reco r
-				WHERE r.p_name = p.pro_name)
+		SET man =
+		(SELECT man FROM reco r
+		WHERE r.p_name = p.pro_name ),
+		woman = (SELECT
+		woman FROM reco r
+		WHERE r.p_name = p.pro_name)
 
 	</update>
-	
-	
+
+
 </mapper>

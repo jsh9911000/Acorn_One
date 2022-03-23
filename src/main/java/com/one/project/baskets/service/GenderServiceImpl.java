@@ -13,36 +13,31 @@ import com.one.project.baskets.dto.GenderDto;
 public class GenderServiceImpl implements GenderService {
 	@Autowired
 	private GenderDao dao;
-	
+
 	@Override
-	public void buy(HttpServletRequest request, ModelAndView mView,String p_name) {
+	public void buy(HttpServletRequest request, ModelAndView mView, String p_name) {
 		GenderDto dto = new GenderDto();
 		dto.setP_name(p_name);
-		String gender=(String)request.getSession().getAttribute("gender");
-		if(gender.equals("man")) {
+		String gender = (String) request.getSession().getAttribute("gender");
+		if (gender.equals("man")) {
 			dao.plusMan(p_name);
-		}else {
+		} else {
 			dao.plusWoman(p_name);
 		}
-		
-		
-		
-		
+
 	}
 
 	@Override
 	public void un_buy(HttpServletRequest request, ModelAndView mView, String p_name) {
 		GenderDto dto = new GenderDto();
 		dto.setP_name(p_name);
-		String gender=(String)request.getSession().getAttribute("gender");
-		if(gender.equals("man")) {
+		String gender = (String) request.getSession().getAttribute("gender");
+		if (gender.equals("man")) {
 			dao.minusMan(p_name);
-		}else {
+		} else {
 			dao.minusWoman(p_name);
 		}
-		
+
 	}
-	
-	
 
 }

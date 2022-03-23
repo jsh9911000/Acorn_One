@@ -7,21 +7,20 @@ import org.springframework.stereotype.Repository;
 import com.one.project.users.dto.UsersDto;
 
 @Repository
-public class UsersDaoImpl implements UsersDao{
+public class UsersDaoImpl implements UsersDao {
 
 	@Autowired
 	private SqlSession session;
-	
+
 	@Override
 	public boolean isExist(String inputId) {
-		String id=session.selectOne("users.isExist", inputId);
-		if(id==null) {
+		String id = session.selectOne("users.isExist", inputId);
+		if (id == null) {
 			return false;
-		}else {
+		} else {
 			return true;
 		}
 	}
-
 
 	@Override
 	public void insert(UsersDto dto) {
@@ -30,8 +29,8 @@ public class UsersDaoImpl implements UsersDao{
 
 	@Override
 	public UsersDto getData(String id) {
-		
-		// 존재하지 않은 아이디면 null 이 리턴된다. 
+
+		// 존재하지 않은 아이디면 null 이 리턴된다.
 		return session.selectOne("users.getData", id);
 	}
 
@@ -49,5 +48,5 @@ public class UsersDaoImpl implements UsersDao{
 	public void delete(String id) {
 		session.delete("users.delete", id);
 	}
-	
+
 }
