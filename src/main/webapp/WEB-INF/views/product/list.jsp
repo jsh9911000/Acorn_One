@@ -238,7 +238,7 @@
         </div>
     </section>
     <section id="content4" style="overflow: auto; height: 550px;">
-       <div class="card-group" style="overflow: auto; height: 400px;">
+       <div class="card-group">
             <c:forEach var="food" items="${foodlist }">
              <c:if test="${food.pro_cate==3 }">
             <form action="insert.do">
