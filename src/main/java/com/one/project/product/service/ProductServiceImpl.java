@@ -26,20 +26,19 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDao dao;
 
 	public void saveImage(ProductDto dto, HttpServletRequest request) {
-		// 업로드된 파일의 정보를 가지고 있는 MultipartFile 객체의 참조값을 얻어오기
+
 		MultipartFile image = dto.getImage();
-		// 원본 파일명 -> 저장할 파일 이름 만들기위해서 사용됨
+
 		String orgFileName = image.getOriginalFilename();
 
-		// webapp/food 폴더 까지의 실제 경로(서버의 파일 시스템 상에서의 경로)
 		String realPath = request.getServletContext().getRealPath("/food");
-		// db 에 저장할 저장할 파일의 상세 경로
+
 		String filePath = realPath + File.separator;
-		// 디렉토리를 만들 파일 객체 생성
+
 		File food = new File(filePath);
 		if (!food.exists()) {
-			// 만약 디렉토리가 존재하지X
-			food.mkdir();// 폴더 생성
+
+			food.mkdir();
 		}
 
 		try {
@@ -51,7 +50,6 @@ public class ProductServiceImpl implements ProductService {
 
 		dto.setImagePath("../food/" + orgFileName);
 
-		// ProductDao 를 이용해서 DB 에 저장하기
 		dao.insert2(dto);
 		String pro_name = dto.getPro_name();
 		dao.move(pro_name);
@@ -100,7 +98,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void insert2(ProductDto dto, HttpServletRequest request) {
-		// TODO Auto-generated method stub
 
 	}
 

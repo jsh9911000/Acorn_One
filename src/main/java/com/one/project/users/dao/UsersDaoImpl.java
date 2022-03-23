@@ -30,7 +30,6 @@ public class UsersDaoImpl implements UsersDao {
 	@Override
 	public UsersDto getData(String id) {
 
-		// 존재하지 않은 아이디면 null 이 리턴된다.
 		return session.selectOne("users.getData", id);
 	}
 
