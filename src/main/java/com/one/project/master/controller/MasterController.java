@@ -20,7 +20,7 @@ public class MasterController {
 		service.getListMember(mView);
 
 		mView.setViewName("product/list2");
-		// 4. ModelAndView 객체를 리턴해 준다.
+
 		return mView;
 	}
 

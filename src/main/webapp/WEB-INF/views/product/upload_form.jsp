@@ -31,7 +31,7 @@ body {
 	<div class="modal-dialog" role="document">
 		<div class="modal-content rounded-5 shadow">
 			<div class="modal-header p-5 pb-4 border-bottom-0">
-				<!-- <h5 class="modal-title">Modal title</h5> -->
+
 				<h2 class="fw-bold mb-0">상품 등록</h2>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"
@@ -47,8 +47,8 @@ body {
 					</div>
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control rounded-4" name="pro_price"
-							id="pro_price" placeholder="상품가격" /> <label class="control-label"
-							for="pro_price">상품가격</label>
+							id="pro_price" placeholder="상품가격" /> <label
+							class="control-label" for="pro_price">상품가격</label>
 					</div>
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control rounded-4"

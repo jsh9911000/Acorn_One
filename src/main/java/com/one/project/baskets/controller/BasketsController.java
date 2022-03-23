@@ -34,7 +34,7 @@ public class BasketsController {
 		mView.addObject("rocolist_Woman", list2);
 		mView.setViewName("product/list");
 
-		// 4. ModelAndView 객체를 리턴해 준다.
+		
 		return mView;
 	}
 

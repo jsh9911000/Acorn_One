@@ -33,7 +33,7 @@ body {
 
 	<c:choose>
 		<c:when test="${ empty sessionScope.id}">
-			<!-- 로그인 안된 상태 -->
+
 			<div class="modal-dialog" role="document">
 				<div class="modal-content rounded-5 shadow">
 					<div class="modal-header p-5 pb-4 border-bottom-0">

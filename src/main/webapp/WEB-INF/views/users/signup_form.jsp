@@ -71,13 +71,7 @@ body {
 							class="control-label" for="name">이름</label>
 						<div class="invalid-feedback">한국 이름 2~4자리만 가능합니다.</div>
 					</div>
-					<!--
-	                <div class="form-floating mb-3">
-	                 <input type="text" class="form-control rounded-4" id="age" name="age" placeholder="Age">
-	                 <label class="control-label" for="age">나이</label>
-	                 <div class="invalid-feedback">2자리 숫자로만 작성하세요.</div>
-	                </div>
-                -->
+
 					<div class="custom-control custom-radio">
 						<legend>성별 정보 선택</legend>
 						<label class="custom-control-label"> <input type="radio"
@@ -105,7 +99,6 @@ body {
 		let isPwdValid = false;
 		let isPwdValid2 = false;
 		let isNameValid = false;
-		//let isAgeValid=false;
 
 		document
 				.querySelector("#id")
@@ -119,7 +112,7 @@ body {
 
 							let inputId = this.value;
 							console.log(inputId);
-							//영어와 숫자를 하나씩 조합해서 5~10글자 정규식
+
 							const reg_id = /^(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{5,10}$/;
 
 							if (!reg_id.test(inputId)) {
@@ -128,7 +121,7 @@ body {
 										.add("is-invalid");
 								return;
 							}
-							//아이디 중복 체크하는 코드인데 선생님 코드 그대로 짜서 잘은 모르겠습니다
+
 							ajaxPromise(
 									"${pageContext.request.contextPath}/users/checkid.do",
 									"get", "inputId=" + inputId)
@@ -162,8 +155,6 @@ body {
 			const pwd = document.querySelector("#pwd").value;
 			const pwd2 = document.querySelector("#pwd2").value;
 
-			//영어 대문자와 소문자, 숫자, 특수기호(!@#$)를 하나씩 조합하여 10~15글자 정규식
-			//const reg_pwd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*])[a-zA-Z0-9!@#$%*]{10,15}$/;
 			const reg_pwd = /^[a-z].{4,9}$/;
 
 			if (!reg_pwd.test(pwd)) {
@@ -193,7 +184,6 @@ body {
 
 			const name = document.querySelector("#name").value;
 
-			//한글 이름 2글자에서 4글자
 			const reg_name = /^[가-힣]{2,4}$/;
 
 			if (!reg_name.test(name)) {
@@ -207,35 +197,13 @@ body {
 		}
 		document.querySelector("#name").addEventListener("input", checkName);
 
-		/*
-			function checkAge(){
-				document.querySelector("#age").classList.remove("is-valid");
-				document.querySelector("#age").classList.remove("is-invalid");
-				
-				const age=document.querySelector("#age").value;
-				
-				//나이 숫자로 2자리만
-				const reg_age=/^[0-9]{2,2}$/;
-				
-				if(!reg_age.test(age)){
-					isAgeValid=false;
-					document.querySelector("#age").classList.add("is-invalid");
-					return;
-				}else{
-					isAgeValid=ture;
-					document.querySelector("#age").classList.add("is-valid");
-				}
-			}
-			document.querySelector("#age").addEventListener("input", checkAge);
-		 */
-
 		document.querySelector("#myForm").addEventListener(
 				"submit",
 				function(e) {
 					let isFormValid = isIdValid && isPwdValid && isPwdValid2
 							&& isNameValid;
-					if (!isFormValid) {//폼이 유효하지 않으면
-						//폼 전송 막기 
+					if (!isFormValid) {
+
 						e.preventDefault();
 					}
 				});
@@ -252,8 +220,6 @@ body {
 			let inputName = this.value;
 			console.log(inputName);
 		});
-
-		//바뀌지 않는 건지 바뀐 값이 안 나오는 건지
 
 		var checkedGender = document
 				.querySelector("input[name='gender']:checked")
