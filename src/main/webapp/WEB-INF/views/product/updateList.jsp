@@ -11,8 +11,8 @@
 <style>
         body {
         	background-color: #212529;
-	        padding-top: 40px;
-	        padding-bottom: 40px;
+	        padding-top: 0px;
+	        padding-bottom: 0px;
         }
 		.block {
 		    display: block;
@@ -28,8 +28,8 @@
    			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
              onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
 		</div>
-		<div class="modal-body p-5 pt-0">
-           <div class="row" style="overflow: auto; height: 800px;">
+		<div class="modal-body p-4 pt-0">
+           <div class="row" style="overflow: auto; height: 750px;">
 				<table class="table table-hover">
 					<thead>
 						<tr>
