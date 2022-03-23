@@ -14,7 +14,7 @@ public class MasterDaoImpl implements MasterDao {
 
 	@Override
 	public List<MasterDto> getList() {
-		List<MasterDto> list2=session.selectList("master.getList");
+		List<MasterDto> list2 = session.selectList("master.getList");
 		return list2;
 	}
 
@@ -26,10 +26,7 @@ public class MasterDaoImpl implements MasterDao {
 	@Override
 	public void clear() {
 		session.delete("master.clear");
-		
+
 	}
-
-
-
 
 }

@@ -3,43 +3,53 @@
 
 <mapper namespace="product">
 	<insert id="insert" parameterType="productDto">
-        INSERT INTO PRODUCTS
-        (pro_num, pro_name, pro_price, man_sell, woman_sell, remain_stock, imagepath)
-        VALUES(products_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0, #{remain_stock} #{imagePath})
-    </insert>
+		INSERT INTO PRODUCTS
+		(pro_num, pro_name, pro_price, man_sell, woman_sell, remain_stock, imagepath)
+		VALUES(products_seq.NEXTVAL, #{pro_name}, #{pro_price}, 0, 0,
+		#{remain_stock} #{imagePath})
+	</insert>
 
 
 	<insert id="insert2" parameterType="productDto">
 		INSERT INTO PRODUCTS
 		(pro_num, pro_name, pro_price, remain_stock, pro_cate, imagepath)
-		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price}, #{remain_stock}, #{pro_cate}, #{imagePath})
+		VALUES(pro_num_seq.NEXTVAL, #{pro_name}, #{pro_price},
+		#{remain_stock}, #{pro_cate}, #{imagePath})
 	</insert>
-  
-	<select id="getList" parameterType="productDto" resultType="productDto">
+
+	<select id="getList" parameterType="productDto"
+		resultType="productDto">
 		SELECT pro_num, pro_name, pro_price, remain_stock
-		FROM products
+		FROM
+		products
 		ORDER BY pro_num ASC
 	</select>
-	
+
 	<update id="update" parameterType="productDto">
 		UPDATE PRODUCTS
-		SET pro_name=#{pro_name}, pro_price=#{pro_price}, remain_stock=#{remain_stock}
+		SET
+		pro_name=#{pro_name}, pro_price=#{pro_price},
+		remain_stock=#{remain_stock}
 		WHERE pro_num=#{pro_num}
 	</update>
-	
+
 	<select id="getData" parameterType="int" resultType="productDto">
-		SELECT pro_num, pro_name, pro_price, remain_stock
+		SELECT
+		pro_num, pro_name, pro_price, remain_stock
 		FROM PRODUCTS
-		WHERE pro_num=#{pro_num}
+		WHERE
+		pro_num=#{pro_num}
 	</select>
-	
+
 	<delete id="delete" parameterType="int">
 		DELETE FROM PRODUCTS
-		WHERE pro_num=#{pro_num}
+		WHERE
+		pro_num=#{pro_num}
 	</delete>
 
 
-	<select id="getProductList" resultType="com.one.project.product.dto.ProductDto">
+	<select id="getProductList"
+		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY pro_num
 	</select>
@@ -47,24 +57,28 @@
 
 
 
-	
+
 	<insert id="move" parameterType="String">
-		INSERT INTO reco (p_name,man,woman)
+		INSERT INTO reco
+		(p_name,man,woman)
 		VALUES(#{pro_name}, 0,0)
 	</insert>
-	
+
 	<delete id="remove" parameterType="String">
 		DELETE FROM reco
-		WHERE p_name=#{pro_name}
+		WHERE
+		p_name=#{pro_name}
 	</delete>
 
-		
-	<select id="getRecoList_woman" resultType="com.one.project.product.dto.ProductDto">
+
+	<select id="getRecoList_woman"
+		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY woman DESC
-		
+
 	</select>
-	<select id="getRecoList_man" resultType="com.one.project.product.dto.ProductDto">
+	<select id="getRecoList_man"
+		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY man DESC
 	</select>
