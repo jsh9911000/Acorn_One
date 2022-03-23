@@ -59,7 +59,7 @@
    function deleteConfirm(){
       const isDelete=confirm("${id} 님 탈퇴 하시겠습니까?");
       if(isDelete){
-         location.href="${pageContext.request.contextPath}/users/private/delete.do";
+         location.href="${pageContext.request.contextPath}/users/delete.do";
       }
    }
 </script>   
