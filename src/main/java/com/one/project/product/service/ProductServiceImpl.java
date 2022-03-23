@@ -113,5 +113,19 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 
+	@Override
+	public List<ProductDto> recoList_Man() {
+
+		return dao.getRecoList_Man();
+	}
+
+
+	@Override
+	public List<ProductDto> recoList_Woman() {
+
+		return dao.getRecoList_Woman();
+	}
+
+
 }
 

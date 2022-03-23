@@ -119,26 +119,50 @@
      </nav>
      
      <div class="container">
-     	<h1>추천메뉴</h1>
-	    <div class="row">
-    	<div class="card-group">
-    	<form action="" id="">
-   					<input type="hidden" name="p_name" value="" readonly="readonly">
-					<input type="hidden" name="p_price" value="" readonly="readonly">
-				</form>
-            <div class="col-lg-2">
-            <div class="card">
-			            <button type="submit" class="btn btn-dark" form="">
-						  <img src="../food/낙지덮밥.jpg" class="card-img-top" alt="...">
-			  			<div class="card-body">
-				  			<h4 class="card-title">낙지덮밥</h4>
-							<p class="card-text">1000 원</p>
-						</div>
-						</button>
-			</div>
-            </div>
-    	</div>
-    	</div>
+                 <h3 class="h3 mb-3 fw-normal"><strong>추천 리스트</strong></h3>
+               			<c:choose>
+               				<c:when test="${sessionScope.gender eq 'man'}">
+               		    	<div class="card-group">
+					    		<c:forEach var="food" items="${recolist_Man }" begin="0" end="3">
+									<form action="insert.do" id="${food.pro_num }">
+					   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+										<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+									</form>
+						    		<div class="col-lg-3">
+						              <div class="card">
+						                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+										  	<img src="${food.imagePath }" class="card-img-top" alt="...">
+										  	<div class="card-body">
+									  			<h4 class="card-title">${food.pro_name }</h4>
+												<p class="card-text">${food.pro_price } 원</p>
+										    </div>
+										</button>
+									  </div>
+						            </div>
+					             </c:forEach>
+					               					
+               				</c:when>
+               				<c:otherwise>
+								<div class="card-group">
+					    		<c:forEach var="food" items="${rocolist_Woman }" begin="0" end="3">
+									<form action="insert.do" id="${food.pro_num }">
+					   					<input type="hidden" name="p_name" value="${food.pro_name }" readonly="readonly">
+										<input type="hidden" name="p_price" value="${food.pro_price }" readonly="readonly">
+									</form>
+						    		<div class="col-lg-3">
+						              <div class="card">
+						                 <button type="submit" class="btn btn-dark" form="${food.pro_num }">
+										  	<img src="${food.imagePath }" class="card-img-top" alt="...">
+										  	<div class="card-body">
+									  			<h4 class="card-title">${food.pro_name }</h4>
+												<p class="card-text">${food.pro_price } 원</p>
+										    </div>
+										</button>
+									  </div>
+						            </div>
+					             </c:forEach>				
+               				</c:otherwise>
+               			</c:choose>
      </div>
      
      <div class="row">

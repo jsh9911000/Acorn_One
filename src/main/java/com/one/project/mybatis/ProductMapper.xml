@@ -46,4 +46,14 @@
 		DELETE FROM reco
 		WHERE p_name=#{pro_name}
 	</delete>
+		
+	<select id="getRecoList_woman" resultType="com.one.project.product.dto.ProductDto">
+		SELECT * FROM PRODUCTS
+		ORDER BY woman DESC
+		
+	</select>
+	<select id="getRecoList_man" resultType="com.one.project.product.dto.ProductDto">
+		SELECT * FROM PRODUCTS
+		ORDER BY man DESC
+	</select>
 </mapper>

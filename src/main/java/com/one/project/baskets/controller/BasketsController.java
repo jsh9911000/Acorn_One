@@ -29,8 +29,13 @@ public class BasketsController {
 
 		service.getListMember(mView);
 		List<ProductDto> list=service2.getProductList();
-		mView.addObject("foodlist",list);                                                                                                                                                                                      
+		List<ProductDto> list1=service2.recoList_Man();
+		List<ProductDto> list2=service2.recoList_Woman();
+		mView.addObject("foodlist",list);
+		mView.addObject("recolist_Man",list1);
+		mView.addObject("rocolist_Woman",list2);
 		mView.setViewName("product/list");
+		
 		//4. ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
