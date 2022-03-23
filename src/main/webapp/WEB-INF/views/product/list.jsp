@@ -65,6 +65,14 @@
 		  bottom: 0px;
 		  right: 0px;
 		}
+		@media (max-width: 900px) {
+        .fixed {
+        position: static;
+        bottom: 0px;
+        right: 0px;
+        z-index:0;
+        }
+      }
 		.sticky {
 		  position: -webkit-sticky;
 		  position: sticky;
