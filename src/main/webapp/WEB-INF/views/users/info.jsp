@@ -33,8 +33,7 @@ body {
 		<div class="modal-content rounded-5 shadow">
 			<div class="modal-header p-5 pb-4 border-bottom-0">
 				<h2 class="fw-bold mb-0">가입 정보 입니다.</h2>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
 					onclick="location.href='${pageContext.request.contextPath}/product/list.do'"></button>
 			</div>
 			<div class="modal-body p-5 pt-0">
@@ -61,8 +60,7 @@ body {
 						<td>${dto.gender }</td>
 					</tr>
 				</table>
-				<button class="block btn btn-lg rounded-4 btn-danger" type="button"
-					onclick="javascript:deleteConfirm()">탈퇴하기</button>
+				<button class="block btn btn-lg rounded-4 btn-danger" type="button" onclick="javascript:deleteConfirm()">탈퇴하기</button>
 			</div>
 		</div>
 	</div>

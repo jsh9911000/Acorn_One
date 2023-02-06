@@ -17,7 +17,7 @@ import com.one.project.users.dto.UsersDto;
 
 @Service
 public class UsersServiceImpl implements UsersService {
-
+	//의존성 객체 주입. => 원래는 new를 통해서 객체를 생성해서 저장해서 사용해야 하는데, @Autowired 어노테이션을 통해서 자동으로 필요한 객체를 주입해준다.
 	@Autowired
 	private UsersDao dao;
 
@@ -41,22 +41,18 @@ public class UsersServiceImpl implements UsersService {
 	public void loginProcess(UsersDto dto, HttpSession session) {
 
 		boolean isValid = false;
-
-		UsersDto result = dao.getData(dto.getId());
+		
+		//클라이언트가 입력한 비밀번호가 DB에 있는지 조회. => 가입한 회원인지 여부를 파악할 수 있다.
+		UsersDto result = dao.getData(dto.getId());	//DB로 ID를 보내서 회원의 정보를 가져온다.
 		if (result != null) {
-
-			String encodedPwd = result.getPwd();
-			String inputPwd = dto.getPwd();
-
-			isValid = BCrypt.checkpw(inputPwd, encodedPwd);
+			String encodedPwd = result.getPwd();	//DB에서 가져온 정보 중에 비밀번호만 따로 추출한다.
+			String inputPwd = dto.getPwd();	//클라이언트가 입력한 비밀번호만 따로 추출한다.
+			isValid = BCrypt.checkpw(inputPwd, encodedPwd);	//BCrypt 객체를 이용해서 두 비밀번호가 일치하는 지 확인한다. => 결과는 boolean type으로 return.
 		}
-
-		if (isValid) {
-
-			session.setAttribute("id", dto.getId());
-			String gender = result.getGender();
-			session.setAttribute("gender", gender);
-
+		if (isValid) {		//가입한 회원이라면,
+			session.setAttribute("id", dto.getId());	//Session 객체를 통해서 로그인. => ID를 Session에 저장.	
+			String gender = result.getGender();	//DB에서 클라이언트의 성별만 따로 추출한다.
+			session.setAttribute("gender", gender);		//성별을 Session에 저장.
 		}
 	}
 

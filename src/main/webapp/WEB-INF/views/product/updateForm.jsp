@@ -34,41 +34,33 @@ body {
 			<div class="modal-header p-5 pb-4 border-bottom-0">
 				<h2 class="fw-bold mb-0">상품 수정</h2>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"
-					onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'"></button>
+					aria-label="Close" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'"></button>
 			</div>
 			<div class="modal-body p-5 pt-0">
 				<form action="update.do" method="post">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control rounded-4" name="pro_num"
-							id="pro_num" value="${dto.pro_num }" readonly /> <label
-							class="control-label" for="pro_num">메뉴번호</label>
+						<input type="text" class="form-control rounded-4" name="pro_num" id="pro_num" value="${dto.pro_num }" readonly />
+						<label class="control-label" for="pro_num">메뉴번호</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control rounded-4" name="pro_name"
-							id="pro_name" value="${dto.pro_name }" readonly /> <label
-							class="control-label" for="pro_name">메뉴명</label>
+						<input type="text" class="form-control rounded-4" name="pro_name" id="pro_name" value="${dto.pro_name }" readonly />
+						 <label class="control-label" for="pro_name">메뉴명</label>
 					</div>
 					<div class="form-floating mb-3">
-
-						<input type="text" class="form-control rounded-4" name="pro_price"
-							id="pro_price" value="${dto.pro_price }" /> <label
-							class="control-label" for="pro_price">가격</label>
+						<input type="text" class="form-control rounded-4" name="pro_price" id="pro_price" value="${dto.pro_price }" />
+						 <label class="control-label" for="pro_price">가격</label>
 					</div>
 					<div class="form-floating mb-3">
-
 						<input type="text" class="form-control rounded-4"
 							name="remain_stock" id="remain_stock"
-							value="${dto.remain_stock }" /> <label class="control-label"
-							for="remain_stock">재고</label>
+							value="${dto.remain_stock }" /> 
+						<label class="control-label" for="remain_stock">재고</label>
 					</div>
 					<button class="block btn btn-lg btn-warning">수정 완료</button>
-					<button type="reset" class="block btn btn-lg btn-danger"
-						onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">취소</button>
+					<button type="reset" class="block btn btn-lg btn-danger" onclick="location.href='${pageContext.request.contextPath}/product/updateList.do'">취소</button>
 				</form>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>

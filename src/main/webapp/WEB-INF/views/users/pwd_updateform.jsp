@@ -32,27 +32,24 @@ body {
 		<div class="modal-content rounded-5 shadow">
 			<div class="modal-header p-5 pb-4 border-bottom-0">
 				<h2 class="fw-bold mb-0">비밀번호 수정</h2>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
 					onclick="location.href='${pageContext.request.contextPath}/product/list.do'"></button>
 			</div>
 			<div class="modal-body p-5 pt-0">
 				<form
 					action="${pageContext.request.contextPath}/users/pwd_update.do">
 					<div class="form-floating mb-3">
-						<input type="password" class="form-control" name="pwd" id="pwd"
-							placeholder="Password"> <label for="pwd">기존 비밀번호</label>
+						<input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password">
+						<label for="pwd">기존 비밀번호</label>
 					</div>
 					<div class="form-floating">
-						<input type="password" class="form-control" name="newPwd"
-							id="newPwd" placeholder="New Password"> <label
-							for="newPwd">새 비밀번호</label>
+						<input type="password" class="form-control" name="newPwd" id="newPwd" placeholder="New Password"> 
+						<label for="newPwd">새 비밀번호</label>
 					</div>
 					<br />
 					<div class="form-floating">
-						<input type="password" class="form-control" id="newPwd"
-							placeholder="New Password"> <label for="newPwd2">새
-							비밀번호 확인</label>
+						<input type="password" class="form-control" id="newPwd" placeholder="New Password">
+						 <label for="newPwd2">새 비밀번호 확인</label>
 					</div>
 					<br />
 					<button class="block btn btn-lg rounded-4 btn-danger" type="submit">수정하기</button>

@@ -21,9 +21,10 @@ public interface ProductDao {
 	public void move(String pro_name);
 
 	public void remove(String pro_name);
-
+	
+	//남자.
 	public List<ProductDto> getRecoList_Man();
-
+	//여자.
 	public List<ProductDto> getRecoList_Woman();
 
 }

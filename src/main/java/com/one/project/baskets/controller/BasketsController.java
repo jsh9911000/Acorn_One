@@ -15,6 +15,7 @@ import com.one.project.baskets.service.GenderService;
 
 @Controller
 public class BasketsController {
+	//의존성 객체 주입 3개.
 	@Autowired
 	private ProductService service2;
 	@Autowired
@@ -24,7 +25,6 @@ public class BasketsController {
 
 	@RequestMapping("/product/list")
 	public ModelAndView list(ModelAndView mView) {
-
 		service.getListMember(mView);
 		List<ProductDto> list = service2.getProductList();
 		List<ProductDto> list1 = service2.recoList_Man();
@@ -33,8 +33,6 @@ public class BasketsController {
 		mView.addObject("recolist_Man", list1);
 		mView.addObject("rocolist_Woman", list2);
 		mView.setViewName("product/list");
-
-		
 		return mView;
 	}
 

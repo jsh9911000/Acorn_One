@@ -58,12 +58,14 @@ public class ProductDaoImpl implements ProductDao {
 
 	}
 
+	//남자.
 	@Override
 	public List<ProductDto> getRecoList_Man() {
 		List<ProductDto> list = session.selectList("product.getRecoList_man");
 		return list;
 	}
-
+	
+	//여자.
 	@Override
 	public List<ProductDto> getRecoList_Woman() {
 		List<ProductDto> list = session.selectList("product.getRecoList_woman");

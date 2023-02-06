@@ -47,16 +47,11 @@
 		pro_num=#{pro_num}
 	</delete>
 
-
 	<select id="getProductList"
 		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY pro_num
 	</select>
-
-
-
-
 
 	<insert id="move" parameterType="String">
 		INSERT INTO reco
@@ -69,14 +64,13 @@
 		WHERE
 		p_name=#{pro_name}
 	</delete>
-
-
+	<!-- 여자. -->
 	<select id="getRecoList_woman"
 		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS
 		ORDER BY woman DESC
-
 	</select>
+	<!-- 남자. -->
 	<select id="getRecoList_man"
 		resultType="com.one.project.product.dto.ProductDto">
 		SELECT * FROM PRODUCTS

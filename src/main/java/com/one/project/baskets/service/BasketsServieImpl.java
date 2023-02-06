@@ -25,7 +25,6 @@ public class BasketsServieImpl implements BasketsService {
 
 	@Override
 	public void saveBasket(String p_name, int p_price, String u_name, String gender) {
-
 		BasketsDto dto = new BasketsDto();
 		dto.setP_name(p_name);
 		dto.setP_price(p_price);
@@ -43,14 +42,12 @@ public class BasketsServieImpl implements BasketsService {
 
 	@Override
 	public void payBasket() {
-		dao.pay();
-
+		dao.pay();	//구매하면 장바구니에 담긴 record들을 삭제하는 방식으로 구매한다.
 	}
 
 	@Override
 	public void moveBasket() {
 		dao.move();
-
 	}
 
 }

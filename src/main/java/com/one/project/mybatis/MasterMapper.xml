@@ -8,7 +8,6 @@
 		SELECT u_name,p_name, p_price, gender, b_num
 		FROM master
 		ORDER BY u_name
-
 	</select>
 
 	<delete id="delete2"

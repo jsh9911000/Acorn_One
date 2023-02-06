@@ -8,7 +8,7 @@ import com.one.project.users.dto.UsersDto;
 
 @Repository
 public class UsersDaoImpl implements UsersDao {
-
+	//의존성 객체 주입. => 원래는 new를 통해서 객체를 생성해서 저장해서 사용해야 하는데, @Autowired 어노테이션을 통해서 자동으로 필요한 객체를 주입해준다.
 	@Autowired
 	private SqlSession session;
 

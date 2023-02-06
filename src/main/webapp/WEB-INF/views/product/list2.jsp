@@ -38,29 +38,19 @@
                      <th>음식</th>
                      <th>가격</th>
                      <th>삭제</th>
-                  
-         
                   </tr>
                </thead>
                <tbody>
-               
                <c:set var="total" value="0"/>
-         
                <c:forEach var="tmp" items="${list2 }">
-                  
                   <tr>
                      <td>${tmp.u_name }</td>
                      <td>${tmp.gender }</td>
                      <td>${tmp.p_name }</td>
                      <td>${tmp.p_price }</td>
-                     
-                  
-                     
                      <td>
                         <form action="delete2.do">
-                           
                            <input type="hidden" name="b_num" value="${tmp.b_num }" readonly="readonly">
-                           
                            <button type="submit">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
@@ -68,17 +58,12 @@
                            </button>
                         </form> 
                      </td>
-                     
                   </tr>
                   <c:set var="total" value="${total +tmp.p_price}"/>
-
                </c:forEach>      
-
                </tbody>
-   
             </table>
                 </div>
-
                 <h3><c:out value="총금액 : ${total }원"/></h3>
                <button type="button" class="btn btn-danger" onclick="javascript:clearConfirm()">전체 삭제</button>
                <button type="button" class="btn btn-warning" onclick="location.href='${pageContext.request.contextPath}/product/upload_form.do'">상품 등록</button>

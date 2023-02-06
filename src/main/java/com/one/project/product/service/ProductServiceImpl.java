@@ -22,38 +22,29 @@ import com.one.project.product.dao.ProductDao;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+	//의존성 객체 주입.
 	@Autowired
 	private ProductDao dao;
 
 	public void saveImage(ProductDto dto, HttpServletRequest request) {
-
 		MultipartFile image = dto.getImage();
-
 		String orgFileName = image.getOriginalFilename();
-
 		String realPath = request.getServletContext().getRealPath("/food");
-
 		String filePath = realPath + File.separator;
-
 		File food = new File(filePath);
 		if (!food.exists()) {
-
 			food.mkdir();
 		}
-
 		try {
 			image.transferTo(new File(filePath + orgFileName));
 			System.out.println(); // 임시 출력
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		dto.setImagePath("../food/" + orgFileName);
-
 		dao.insert2(dto);
 		String pro_name = dto.getPro_name();
 		dao.move(pro_name);
-
 	}
 
 	@Override
@@ -78,16 +69,13 @@ public class ProductServiceImpl implements ProductService {
 	public void getList(HttpServletRequest request) {
 		ProductDto dto = new ProductDto();
 		List<ProductDto> list = dao.getList(dto);
-
 		request.setAttribute("list", list);
-
 	}
 
 	@Override
 	public void getData(int num, ModelAndView mView) {
 		ProductDto dto = dao.getData(num);
 		mView.addObject("dto", dto);
-
 	}
 
 	@Override
@@ -100,16 +88,14 @@ public class ProductServiceImpl implements ProductService {
 	public void insert2(ProductDto dto, HttpServletRequest request) {
 
 	}
-
+	//
 	@Override
 	public List<ProductDto> recoList_Man() {
-
 		return dao.getRecoList_Man();
 	}
 
 	@Override
 	public List<ProductDto> recoList_Woman() {
-
 		return dao.getRecoList_Woman();
 	}
 

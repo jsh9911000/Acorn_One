@@ -30,65 +30,50 @@ body {
 </head>
 </head>
 <body>
-
 	<div class="modal-dialog" role="document">
 		<div class="modal-content rounded-5 shadow">
 			<div class="modal-header p-5 pb-4 border-bottom-0">
 				<h2 class="fw-bold mb-0">회원가입 입니다.</h2>
-				<button type="button" class="btn-close" data-bs-dismiss="modal"
-					aria-label="Close"
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
 					onclick="location.href='${pageContext.request.contextPath}/home.do'"></button>
 			</div>
-
 			<div class="modal-body p-5 pt-0">
-				<form class=""
-					action="${pageContext.request.contextPath}/users/sign.do"
-					method="post" id="myForm">
+				<form class="" action="${pageContext.request.contextPath}/users/sign.do" method="post" id="myForm">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control rounded-4" id="id"
-							name="id" placeholder="ID"> <label class="control-label"
-							for="id">ID</label> <small class="text-muted">영어와 숫자를
-							조합하여 5~10글자 내로 입력하세요.</small>
+						<input type="text" class="form-control rounded-4" id="id" name="id" placeholder="ID">
+							 <label class="control-label" for="id">ID</label>
+							  <small class="text-muted">영어와 숫자를 조합하여 5~10글자 내로 입력하세요.</small>
 						<div class="invalid-feedback">아이디를 다시 확인하세요.</div>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="password" class="form-control rounded-4" id="pwd"
-							name="pwd" placeholder="Password"> <label
-							class="control-label" for="pwd">Password</label> <small
-							class="form-text text-muted">영어소문자와 숫자를 조합하여 10글자 이내로
-							입력하세여</small>
+						<input type="password" class="form-control rounded-4" id="pwd" name="pwd" placeholder="Password">
+						 <label class="control-label" for="pwd">Password</label>
+						  <small class="form-text text-muted">영어소문자와 숫자를 조합하여 10글자 이내로 입력하세여</small>
 						<div class="invalid-feedback">비밀번호를 확인하세요.</div>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="password" class="form-control rounded-4" id="pwd2"
-							name="pwd2" placeholder="Password"> <label
-							class="control-label" for="pwd2">Password 확인</label>
+						<input type="password" class="form-control rounded-4" id="pwd2" name="pwd2" placeholder="Password">
+						 <label class="control-label" for="pwd2">Password 확인</label>
 						<div class="invalid-feedback">비밀번호가 같지 않습니다.</div>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control rounded-4" id="name"
-							name="name" placeholder="Name"> <label
-							class="control-label" for="name">이름</label>
+						<input type="text" class="form-control rounded-4" id="name" name="name" placeholder="Name"> 
+							<label class="control-label" for="name">이름</label>
 						<div class="invalid-feedback">한국 이름 2~4자리만 가능합니다.</div>
 					</div>
-
 					<div class="custom-control custom-radio">
 						<legend>성별 정보 선택</legend>
-						<label class="custom-control-label"> <input type="radio"
-							name="gender" value="man" class="custom-control-input" checked>
-							남자
-						</label> <label class="custom-control-label"> <input type="radio"
-							name="gender" value="woman" class="custom-control-input">
-							여자
+						<label class="custom-control-label">
+						 <input type="radio" name="gender" value="man" class="custom-control-input" checked> 남자
+						</label>
+						<label class="custom-control-label"> 
+						<input type="radio" name="gender" value="woman" class="custom-control-input"> 여자
 						</label>
 					</div>
-					<button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary"
-						type="submit">회원가입</button>
-					<small class="text-muted">By clicking Sign up, you agree to
-						the terms of use.</small>
+					<button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">회원가입</button>
+					<small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
 					<hr class="my-4">
 					<h2 class="fs-5 fw-bold mb-3">가입 시 로그인 페이지로 이동합니다.</h2>
-
 				</form>
 			</div>
 		</div>
@@ -121,7 +106,6 @@ body {
 										.add("is-invalid");
 								return;
 							}
-
 							ajaxPromise(
 									"${pageContext.request.contextPath}/users/checkid.do",
 									"get", "inputId=" + inputId)
@@ -146,7 +130,6 @@ body {
 						});
 
 		function checkPwd() {
-
 			document.querySelector("#pwd").classList.remove("is-valid");
 			document.querySelector("#pwd").classList.remove("is-invalid");
 			document.querySelector("#pwd2").classList.remove("is-valid");
@@ -181,11 +164,8 @@ body {
 		function checkName() {
 			document.querySelector("#name").classList.remove("is-valid");
 			document.querySelector("#name").classList.remove("is-invalid");
-
 			const name = document.querySelector("#name").value;
-
 			const reg_name = /^[가-힣]{2,4}$/;
-
 			if (!reg_name.test(name)) {
 				isNameValid = false;
 				document.querySelector("#name").classList.add("is-invalid");
@@ -195,8 +175,8 @@ body {
 				document.querySelector("#name").classList.add("is-valid");
 			}
 		}
+		
 		document.querySelector("#name").addEventListener("input", checkName);
-
 		document.querySelector("#myForm").addEventListener(
 				"submit",
 				function(e) {

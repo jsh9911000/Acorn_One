@@ -50,7 +50,6 @@ public class ProductController {
 	public ModelAndView getData(int num, ModelAndView mView) {
 		service.getData(num, mView);
 		mView.setViewName("product/updateForm");
-
 		return mView;
 	}
 
@@ -64,14 +63,11 @@ public class ProductController {
 	public String delete(int num, String pro_name) {
 		service.delete(num);
 		service.remove(pro_name);
-
 		return "redirect:/product/updateList.do";
 	}
 
 	@RequestMapping("/product/remove")
-
 	public void remove(String pro_name) {
-
 		service.remove(pro_name);
 
 	}
